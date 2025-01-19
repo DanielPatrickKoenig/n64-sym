@@ -1,4 +1,4 @@
-import N64Sym from "../sym/N64Sym";
+import N64Sym from "../../sym/N64Sym";
 import './Sym.css';
 import { useEffect, useRef } from "react";
 const Sym = (props) => {
@@ -11,8 +11,6 @@ const Sym = (props) => {
     return (<div
         ref={symRef}
         className="game-sym"
-    >
-        HELLO
-    </div>);
+    />);
 }
 export default Sym;

@@ -1,3 +1,4 @@
+import jstrig from "jstrig";
 const ShapeTypes = {
     PLANE: 'plane',
     BOX: 'box',
@@ -81,4 +82,29 @@ function inside(point, vs) {
     
     return _inside;
 }
-export {nextTick, degreesToRadians, radiansToDegrees, ShapeTypes, defaultDimensionValues, processPointerEvent, generateID, getInheritanceChain, getParameterByName, cubicBezier, inside};
+function plotToPath (path, ratio, close) {
+
+    const pathWithDist = (close ? [...path, path[0]] : path)
+        .map((item, index, arr) => ({ 
+            ...item, 
+            distance: index > 0 ? jstrig.distance(item, arr[index - 1]) : 0,
+        }));
+    const cumulations = pathWithDist
+        .map((item, index) => pathWithDist.filter((_item, _index) => _index <= index).reduce((t, _item) => _item.distance + t, 0));
+    const totalDistance = cumulations[cumulations.length - 1];
+    const pathWithRatios = pathWithDist.map((item, index) => ({ ...item, ratio: cumulations[index] / cumulations[cumulations.length - 1], index }))
+    const nextIndex = pathWithRatios.find((item, index, arr) => ratio <= item.ratio && ratio >= arr[index - 1].ratio).index;
+    const startEnd = {
+        start: pathWithRatios[nextIndex - 1],
+        end: pathWithRatios[nextIndex]
+    };
+    const ratioDistance = ratio * totalDistance;
+    const startDistance = startEnd.start.ratio * totalDistance;
+    const angle = jstrig.angle(startEnd.start, startEnd.end);
+    const plottedPosition = {
+        x: jstrig.orbit(startEnd.start.x, ratioDistance - startDistance, angle, 'cos'),
+        y: jstrig.orbit(startEnd.start.y, ratioDistance - startDistance, angle, 'sin')
+    }
+    return plottedPosition;
+};
+export {nextTick, degreesToRadians, radiansToDegrees, ShapeTypes, defaultDimensionValues, processPointerEvent, generateID, getInheritanceChain, getParameterByName, cubicBezier, inside, plotToPath};
