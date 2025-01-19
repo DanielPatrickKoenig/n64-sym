@@ -149,14 +149,14 @@ function getCanvasPosition(obj, environment)
 };
 
 function resizeCanvas(environment, width, height){
-    console.log(environment);
+    // console.log(environment);
     if (environment.camera){
         const canvasWidth = width ? width : window.innerWidth;
         const canvasHeight = height ? height : window.innerHeight;
-        console.log('inner width = ', canvasWidth);
-        console.log('inner height = ', canvasHeight);
+        // console.log('inner width = ', canvasWidth);
+        // console.log('inner height = ', canvasHeight);
         environment.camera.aspect = canvasWidth / canvasHeight;
-        console.log(environment.camera.aspect);
+        // console.log(environment.camera.aspect);
         environment.camera.updateProjectionMatrix();
         environment.renderer.setSize(canvasWidth, canvasHeight);   
     }

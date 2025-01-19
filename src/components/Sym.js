@@ -5,9 +5,9 @@ const Sym = (props) => {
     const symRef = useRef(null);
     useEffect(() => {
         if (!symRef.current.querySelector('canvas')){
-            new N64Sym(symRef.current);
+            new N64Sym(symRef.current, props.data);
         }
-    }, [props.ready]);
+    }, [props.data]);
     return (<div
         ref={symRef}
         className="game-sym"
