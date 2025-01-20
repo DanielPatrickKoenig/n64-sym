@@ -82,8 +82,8 @@ function inside(point, vs) {
     
     return _inside;
 }
-function plotToPath (path, ratio, close) {
 
+function getPathDistanceValues(path, close){
     const pathWithDist = (close ? [...path, path[0]] : path)
         .map((item, index, arr) => ({ 
             ...item, 
@@ -92,6 +92,11 @@ function plotToPath (path, ratio, close) {
     const cumulations = pathWithDist
         .map((item, index) => pathWithDist.filter((_item, _index) => _index <= index).reduce((t, _item) => _item.distance + t, 0));
     const totalDistance = cumulations[cumulations.length - 1];
+    return { pathWithDist, cumulations, totalDistance };
+}
+
+function plotToPath (path, ratio, close) {
+    const { pathWithDist, cumulations, totalDistance } = getPathDistanceValues(path, close);
     const pathWithRatios = pathWithDist.map((item, index) => ({ ...item, ratio: cumulations[index] / cumulations[cumulations.length - 1], index }))
     const nextIndex = pathWithRatios.find((item, index, arr) => ratio <= item.ratio && ratio >= arr[index - 1].ratio).index;
     const startEnd = {

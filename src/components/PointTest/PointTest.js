@@ -25,7 +25,7 @@ const PointTest = () => {
                     cy={item.y}
                 />
             ))}
-            <circle r="4" fill="#cc0000" cx={plotToPath(patern, rat, true).x} cy={plotToPath(patern, rat, true).y} />
+            {[0.000000001,.1,.2,.3,.4,.5,.6,.7,.8,.9, 1].map(item => (<circle r="4" fill="#cc0000" cx={plotToPath(patern, item, true).x} cy={plotToPath(patern, item, true).y} />))}
         </svg>
     )
 }
