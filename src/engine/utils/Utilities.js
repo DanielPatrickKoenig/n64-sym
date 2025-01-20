@@ -112,4 +112,24 @@ function plotToPath (path, ratio, close) {
     }
     return plottedPosition;
 };
-export {nextTick, degreesToRadians, radiansToDegrees, ShapeTypes, defaultDimensionValues, processPointerEvent, generateID, getInheritanceChain, getParameterByName, cubicBezier, inside, plotToPath};
+
+function plotToPaths(paths, ratio){
+    const lenthList = paths.map(item => {
+        const distanceValues = getPathDistanceValues(item).cumulations;
+        return distanceValues[distanceValues.length - 1];
+    });
+    const cumulations = lenthList
+        .map((item, index) => lenthList.filter((_item, _index) => _index <= index).reduce((t, _item) => _item + t, 0));
+    const totalDistance = cumulations[cumulations.length - 1];
+    const ratioDistance = totalDistance * ratio;
+    const targetPathEntries = cumulations.map((item, index) => ({ item, index })).filter(item => ratioDistance <= item.item);
+    const startDistance = targetPathEntries.length === paths.length ? 0 : cumulations[targetPathEntries[0].index - 1];
+    const endDistance = targetPathEntries[0].item;
+    const pathRatio = (ratioDistance - startDistance) / (endDistance - startDistance);
+    return plotToPath(paths[targetPathEntries[0].index], pathRatio);
+    // console.log(startDistance);
+    // console.log(ratioDistance);
+    // console.log(endDistance);
+    // console.log(targetPathEntries[0].index);
+}
+export {nextTick, degreesToRadians, radiansToDegrees, ShapeTypes, defaultDimensionValues, processPointerEvent, generateID, getInheritanceChain, getParameterByName, cubicBezier, inside, plotToPath, plotToPaths};
