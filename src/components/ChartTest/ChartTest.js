@@ -15,7 +15,7 @@ const ChartTest = (props) => {
                 break;
             }
             case 'Publisher': {
-                pat = 'bar';
+                pat = 'line';
                 break;
             }
                 
@@ -32,9 +32,19 @@ const ChartTest = (props) => {
                 indexedValues[valueIndex].count += 1;
                 return listItem;
             });
+            const growValIndexAxis = 100 / valuesOfSorter.length;
+            const groupsLengths = valuesOfSorter.map(value => props.data.filter(item => item[sorter] === value).length);
+            groupsLengths.sort((a, b) => b - a);
+            const growValPositionAxis = 100 / groupsLengths[0];
             if (patern === 'bar'){
-                const growVals = { x: 2, y: 10 };
+
+                const growVals = { x: growValPositionAxis, y: growValIndexAxis };
                 setPositions(posList.map(item => ({ ...item, x: item.paternPosition * growVals.x, y: item.paternIndex * growVals.y })))
+            }
+            if (patern === 'line'){
+
+                const growVals = { x: growValIndexAxis, y: growValPositionAxis };
+                setPositions(posList.map(item => ({ ...item, x: item.paternIndex * growVals.x, y: 100 - (item.paternPosition * growVals.y) })))
             }
         }
     }
