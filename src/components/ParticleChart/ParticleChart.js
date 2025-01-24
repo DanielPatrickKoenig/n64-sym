@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import DataPoint from "./DataPoint";
+import DataPoint from "../DataPoint/DataPoint";
 import { uniq } from 'lodash';
-import './ChartTest.css';
-const ChartTest = (props) => {
+import './ParticleChart.css';
+const ParticleChart = (props) => {
     const sortableProperties = ['Genre', 'Publisher'];
     const [sorter, setSorter] = useState('Publisher');
     const [patern, setPatern] = useState('bar');
@@ -59,4 +59,4 @@ const ChartTest = (props) => {
         {positions.map(item => <DataPoint data={item} x={item.x} y={item.y} />)}
     </div>)
 }
-export default ChartTest;
+export default ParticleChart;

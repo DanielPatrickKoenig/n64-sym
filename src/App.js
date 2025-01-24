@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import Sym from './components/Sym/Sym';
-import ChartTest from './components/ChartTest/ChartTest';
-import PointTest from './components/PointTest/PointTest';
+import ParticleChart from './components/ParticleChart/ParticleChart';
 
 function App() {
   const [appData, setAppData] = useState([]);
@@ -24,9 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      {appData.length > 0 && <Sym data={appData} />}
-      {appData.length > 0 && <ChartTest data={appData} />}
-      <PointTest />
+      {appData.length > 0 && <ParticleChart data={appData} />}
     </div>
   );
 }
