@@ -1,25 +1,60 @@
 import { useEffect, useState } from 'react';
 import './DataPoint.css'
-import gsap from 'gsap';
+import gsap, { Sine } from 'gsap';
 const DataPoint = (props) => {
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [xPos, setXPos] = useState(50);
+    const [yPos, setYPos] = useState(50);
+    const totalDuration = 2;
+    const [xDuration, setXDuration] = useState((totalDuration * .25) + (totalDuration * Math.random() * .5));
+    const [yDuration, setYDuration] = useState((totalDuration * .25) + (totalDuration * Math.random() * .5));
     useEffect(() => {
-        const tempPos = { ...position };
+        const xDurations = { startDuration: xDuration, endDuration: totalDuration - xDuration };
+        const yDurations = { startDuration: yDuration, endDuration: totalDuration - yDuration };
+        const tempPos = { x: xPos, y: yPos };
         gsap.to(tempPos, {
-            duration: 1,
-            x: props.x
+            duration: xDurations.startDuration,
+            ease: Sine.easeInOut,
+            x: Math.random() * 100,
+            onUpdate: () => {
+                setXPos(tempPos.x);
+                setYPos(tempPos.y);
+            },
+            onComplete: () => {
+                gsap.to(tempPos, {
+                    duration: xDurations.endDuration,
+                    ease: Sine.easeInOut,
+                    x: props.x,
+                    onUpdate: () => {
+                        setXPos(tempPos.x);
+                        setYPos(tempPos.y);
+                    }
+                });
+            }
         });
         gsap.to(tempPos, {
-            duration: 1,
-            y: props.y,
+            duration: yDurations.startDuration,
+            ease: Sine.easeInOut,
+            y: Math.random() * 100,
             onUpdate: () => {
-                setPosition({ x: tempPos.x, y: tempPos.y });
+                setXPos(tempPos.x);
+                setYPos(tempPos.y);
+            },
+            onComplete: () => {
+                gsap.to(tempPos, {
+                    duration: yDurations.endDuration,
+                    ease: Sine.easeInOut,
+                    y: props.y,
+                    onUpdate: () => {
+                        setXPos(tempPos.x);
+                        setYPos(tempPos.y);
+                    }
+                });
             }
         });
     }, [props.x, props.y]);
     return (<div
         className="data-point"
-        style={{left: `${position.x}%`, top: `${position.y}%`}}
+        style={{left: `${xPos}%`, top: `${yPos}%`}}
     >
         A
     </div>)
