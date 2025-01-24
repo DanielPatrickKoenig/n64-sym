@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Sym from './components/Sym/Sym';
+import ChartTest from './components/ChartTest/ChartTest';
 import PointTest from './components/PointTest/PointTest';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className="App">
       {appData.length > 0 && <Sym data={appData} />}
+      {appData.length > 0 && <ChartTest data={appData} />}
       <PointTest />
     </div>
   );
