@@ -8,6 +8,7 @@ const DataPoint = (props) => {
     const [xDuration, setXDuration] = useState((totalDuration * .25) + (totalDuration * Math.random() * .5));
     const [yDuration, setYDuration] = useState((totalDuration * .25) + (totalDuration * Math.random() * .5));
     useEffect(() => {
+        
         const xDurations = { startDuration: xDuration, endDuration: totalDuration - xDuration };
         const yDurations = { startDuration: yDuration, endDuration: totalDuration - yDuration };
         const tempPos = { x: xPos, y: yPos };
@@ -15,40 +16,58 @@ const DataPoint = (props) => {
             duration: xDurations.startDuration,
             ease: Sine.easeInOut,
             x: Math.random() * 100,
-            onUpdate: () => {
-                setXPos(tempPos.x);
-                setYPos(tempPos.y);
+            onUpdateParams: [props.signature],
+            onUpdate: (s) => {
+                if (s === props.signature){
+                    setXPos(tempPos.x);
+                    setYPos(tempPos.y);
+                }
             },
-            onComplete: () => {
-                gsap.to(tempPos, {
-                    duration: xDurations.endDuration,
-                    ease: Sine.easeInOut,
-                    x: props.x,
-                    onUpdate: () => {
-                        setXPos(tempPos.x);
-                        setYPos(tempPos.y);
-                    }
-                });
+            onCompleteParams: [props.signature],
+            onComplete: (s) => {
+                if (s === props.signature){
+                    gsap.to(tempPos, {
+                        duration: xDurations.endDuration,
+                        ease: Sine.easeInOut,
+                        x: props.x,
+                        onUpdateParams: [props.signature],
+                        onUpdate: (s) => {
+                            if (s === props.signature){
+                                setXPos(tempPos.x);
+                                setYPos(tempPos.y);
+                            }
+                        }
+                    });
+                }
             }
         });
         gsap.to(tempPos, {
             duration: yDurations.startDuration,
             ease: Sine.easeInOut,
             y: Math.random() * 100,
-            onUpdate: () => {
-                setXPos(tempPos.x);
-                setYPos(tempPos.y);
+            onUpdateParams: [props.signature],
+            onUpdate: (s) => {
+                if (s === props.signature){
+                    setXPos(tempPos.x);
+                    setYPos(tempPos.y);
+                }
             },
-            onComplete: () => {
-                gsap.to(tempPos, {
-                    duration: yDurations.endDuration,
-                    ease: Sine.easeInOut,
-                    y: props.y,
-                    onUpdate: () => {
-                        setXPos(tempPos.x);
-                        setYPos(tempPos.y);
-                    }
-                });
+            onCompleteParams: [props.signature],
+            onComplete: (s) => {
+                if (s === props.signature){
+                    gsap.to(tempPos, {
+                        duration: yDurations.endDuration,
+                        ease: Sine.easeInOut,
+                        y: props.y,
+                        onUpdateParams: [props.signature],
+                        onUpdate: (s) => {
+                            if (s === props.signature){
+                                setXPos(tempPos.x);
+                                setYPos(tempPos.y);
+                            }
+                        }
+                    });
+                }
             }
         });
     }, [props.x, props.y]);

@@ -1,29 +1,22 @@
 import { useEffect, useState } from "react";
 import DataPoint from "../DataPoint/DataPoint";
 import { uniq } from 'lodash';
+import { generateID } from '../../utils/Utilities';
+import SorterMenu from "../SorterMenu/SorterMenu";
 import './ParticleChart.css';
 const ParticleChart = (props) => {
-    const sortableProperties = ['Genre', 'Publisher'];
+    const sortablePaterns = ['bar', 'line'];
     const [sorter, setSorter] = useState('Publisher');
     const [patern, setPatern] = useState('bar');
     const [positions, setPositions] = useState([]);
-    const getPattern = () => {
-        let pat = '';
-        switch(sorter){
-            case 'Genre': {
-                pat = 'bar';
-                break;
-            }
-            case 'Publisher': {
-                pat = 'line';
-                break;
-            }
-                
-        }
-        return pat;
+    const [motionSignature, setMotionSignature] = useState('empty');
+    const sorterHandler = (item) => {
+        setSorter(item.name);
+        setPatern(item.patern);
     }
     const arrangePoints = () => {
-        if (sortableProperties.includes(sorter)) {
+        setMotionSignature(generateID());
+        if (sortablePaterns.includes(patern)) {
             const valuesOfSorter = uniq(props.data.map(item => item[sorter]));
             const indexedValues = valuesOfSorter.map((item, index) => ({ item, index, count: 0 }));
             const posList = props.data.map(item => {
@@ -49,14 +42,25 @@ const ParticleChart = (props) => {
         }
     }
     useEffect(() => {
-        setPatern(getPattern());
         arrangePoints();
     }, [sorter]);
-    return (<div
-            className="chart-container"
-            onClick={() => setSorter('Genre')}
-        >
-        {positions.map(item => <DataPoint data={item} x={item.x} y={item.y} />)}
-    </div>)
+    return (
+        <div className="particle-chart">
+            <div
+                className="chart-container"
+                onClick={() => setSorter('Genre')}
+            >
+                {positions.map(item => (
+                    <DataPoint 
+                        data={item}
+                        x={item.x}
+                        y={item.y}
+                        signature={motionSignature}
+                    />
+                ))}
+            </div>
+            <SorterMenu onSelectSorter={sorterHandler} />
+        </div>
+    )
 }
 export default ParticleChart;
