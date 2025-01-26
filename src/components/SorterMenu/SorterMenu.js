@@ -2,7 +2,7 @@ const SorterMenu = (props) => {
     const sorterList = [
         { name: 'Genre', patern: 'line' },
         { name: 'Publisher', patern: 'bar' },
-        { name: 'Year_of_Release', patern: 'bar' }
+        { name: 'Year_of_Release', patern: 'time' }
 
     ];
     return (
