@@ -6,9 +6,9 @@ import SorterMenu from "../SorterMenu/SorterMenu";
 import { plotToPaths } from "../../utils/Utilities";
 import './ParticleChart.css';
 const ParticleChart = (props) => {
-    const sortablePaterns = ['bar', 'line'];
-    const singlePatterns = ['time'];
-    const valueMetrics = ['Global_Sales'];
+    const sortablePaterns = props.data.sortables;
+    const singlePatterns = props.data.singles;
+    const valueMetrics = props.data.valueMetrics;
     const [sorter, setSorter] = useState('Publisher');
     const [patern, setPatern] = useState('bar');
     const [positions, setPositions] = useState([]);
@@ -18,7 +18,7 @@ const ParticleChart = (props) => {
         setPatern(item.patern);
     }
     const filteredData = () => {
-        return props.data;
+        return props.data?.dataset ? props.data?.dataset : props.data;
     }
     const arrangePoints = () => {
         setMotionSignature(generateID());
@@ -89,7 +89,10 @@ const ParticleChart = (props) => {
                     />
                 ))}
             </div>
-            <SorterMenu onSelectSorter={sorterHandler} />
+            <SorterMenu
+                onSelectSorter={sorterHandler}
+                sorters={props.data.sorters}
+            />
         </div>
     )
 }
