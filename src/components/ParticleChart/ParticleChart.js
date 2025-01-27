@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DataPoint from "../DataPoint/DataPoint";
-import { uniq } from 'lodash';
+import { uniq, flatten } from 'lodash';
 import { generateID } from '../../utils/Utilities';
 import SorterMenu from "../SorterMenu/SorterMenu";
 import { plotToPaths } from "../../utils/Utilities";
@@ -9,6 +9,8 @@ const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
     const valueMetrics = props.data.valueMetrics;
+    const customSortablePaterns = props.data.custom.sortables;
+    const customSinglePaterns = props.data.custom.singles;
     const [sorter, setSorter] = useState('Publisher');
     const [patern, setPatern] = useState('bar');
     const [positions, setPositions] = useState([]);
@@ -21,6 +23,7 @@ const ParticleChart = (props) => {
         return props.data?.dataset ? props.data?.dataset : props.data;
     }
     const arrangePoints = () => {
+        console.log(customSinglePaterns);
         setMotionSignature(generateID());
         const valuesOfSorter = uniq(filteredData().map(item => item[sorter]));
         if (sortablePaterns.includes(patern)) {
@@ -50,15 +53,15 @@ const ParticleChart = (props) => {
             if (patern === 'time') {
                 const lines = valueMetrics.map(metric => {
                     const sortedValues = valuesOfSorter.map(item => ({ item, number: Number(item) })).sort((a, b) => a.number - b.number);
-                    console.log(sortedValues);
+                    // console.log(sortedValues);
                     const pointPrimatives = sortedValues.map((item, index) => {
                         const x = index;
                         const y = filteredData().filter(_item => item.item === _item[sorter]).reduce((t, _item) => _item[metric] + t, 0);
-                        console.log(y);
+                        // console.log(y);
                         return { x, y };
                     });
                     const highestY = [...pointPrimatives].sort((a, b) => b.y - a.y)[0].y;
-                    console.log(highestY);
+                    // console.log(highestY);
                     return pointPrimatives.map(item => (
                         { 
                             x: (item.x / (pointPrimatives.length - 1)) * 100,
@@ -66,9 +69,22 @@ const ParticleChart = (props) => {
                         }
                     ));
                 });
-                console.log(lines);
+                // console.log(lines);
                 setPositions(filteredData().map((item, index, arr) => plotToPaths(lines, (index === 0 ? .000000001 : index) / arr.length)));
             }
+        }
+        else if (customSinglePaterns.find(item => item?.name === patern)) {
+            const cPatern = customSinglePaterns.find(item => item.name === patern).patern;
+            const lowestY = flatten(cPatern).sort((a, b) => a.y - b.y)[0].y;
+            const lowestX = flatten(cPatern).sort((a, b) => a.x - b.x)[0].x;
+            const highestY = flatten(cPatern).sort((a, b) => b.y - a.y)[0].y;
+            const highestX = flatten(cPatern).sort((a, b) => b.x - a.x)[0].x;
+            const yDist = (highestY - lowestY) / 2;
+            const xDist = (highestX - lowestX) / 2;
+            const highestValue = [xDist, yDist].sort((a, b) => b - a)[0];
+            const shiftedPatern = cPatern.map(item => item.map(_item => ({ x: ((_item.x - (xDist + lowestX)) * (40 / highestValue)) + 50, y: ((_item.y - (yDist + lowestY)) * (40 / highestValue)) + 50 })))
+            setPositions(filteredData().map((item, index, arr) => plotToPaths(shiftedPatern, (index === 0 ? .000000001 : index) / arr.length)));
+            console.log(shiftedPatern);
         }
     }
     useEffect(() => {

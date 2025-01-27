@@ -7,7 +7,7 @@ function App() {
 
   const loadData = async () => {
     try{
-      const response = await fetch('https://danielpatrickkoenig.github.io/shared-app-resources/n64_data_with_configs.json');
+      const response = await fetch('https://danielpatrickkoenig.github.io/shared-app-resources/n64_data_with_configs_2.json');
       const json = await response.json();
       console.log(json);
       setAppData(json);
@@ -16,7 +16,7 @@ function App() {
       console.error(e);
     }
   };
-  if (!appData.length) {
+  if (!appData.length && !appData?.dataset?.length) {
     loadData();
   }
 
