@@ -72,6 +72,18 @@ const ParticleChart = (props) => {
                 // console.log(lines);
                 setPositions(filteredData().map((item, index, arr) => plotToPaths(lines, (index === 0 ? .000000001 : index) / arr.length)));
             }
+            else if (patern === 'scatter') {
+                const [ xMetric, yMetric ] = valueMetrics;
+                const lowestX = [...filteredData()].sort((a, b) => a[xMetric] - b[xMetric])[0][xMetric];
+                const lowestY = [...filteredData()].sort((a, b) => a[yMetric] - b[yMetric])[0][yMetric];
+                const highestX = [...filteredData()].sort((a, b) => b[xMetric] - a[xMetric])[0][xMetric] - lowestX;
+                const highestY = [...filteredData()].sort((a, b) => b[yMetric] - a[yMetric])[0][yMetric] - lowestY;
+                console.log(lowestX, lowestY);
+                console.log(highestX, highestY);
+                const positions = filteredData().map(item => ({ x: ((item[xMetric] - lowestX) / highestX) * 100, y: 100 - (((item[yMetric] - lowestY) / highestY) * 100) }))
+                console.log(positions);
+                setPositions(positions);
+            }
         }
         else if (customSinglePaterns.find(item => item?.name === patern)) {
             const cPatern = customSinglePaterns.find(item => item.name === patern).patern;
