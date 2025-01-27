@@ -7,7 +7,7 @@ function App() {
 
   const loadData = async () => {
     try{
-      const response = await fetch('https://danielpatrickkoenig.github.io/shared-app-resources/n64_data.json');
+      const response = await fetch('https://danielpatrickkoenig.github.io/shared-app-resources/n64_data_with_configs_2.json');
       const json = await response.json();
       console.log(json);
       setAppData(json);
@@ -16,13 +16,17 @@ function App() {
       console.error(e);
     }
   };
-  if (!appData.length) {
+  if (!appData.length && !appData?.dataset?.length) {
     loadData();
   }
 
   return (
     <div className="App">
-      {appData.length > 0 && <ParticleChart data={appData} />}
+      {(appData?.dataset?.length || appData?.length) > 0 && (
+        <ParticleChart
+          data={appData}
+        />
+      )}
     </div>
   );
 }
