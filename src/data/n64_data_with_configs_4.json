@@ -11,7 +11,7 @@
     "custom": {
         "sortables": [
             {
-                "name": "diamond",
+                "name": "diamond2",
                 "patern": [
                     [
                         {
@@ -74,6 +74,10 @@
         {
             "name": "Genre",
             "patern": "line"
+        },
+        {
+            "name": "Genre",
+            "patern": "diamond2"
         },
         {
             "name": "Publisher",
