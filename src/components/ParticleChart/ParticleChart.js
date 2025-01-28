@@ -98,10 +98,53 @@ const ParticleChart = (props) => {
             setPositions(filteredData().map((item, index, arr) => plotToPaths(shiftedPatern, (index === 0 ? .000000001 : index) / arr.length)));
             console.log(shiftedPatern);
         }
+        else if (customSortablePaterns.find(item => item?.name === patern)) {
+            // const cPatern = customSortablePaterns.find(item => item.name === patern).patern;
+            // const lowestY = flatten(cPatern).sort((a, b) => a.y - b.y)[0].y;
+            // const lowestX = flatten(cPatern).sort((a, b) => a.x - b.x)[0].x;
+            // const highestY = flatten(cPatern).sort((a, b) => b.y - a.y)[0].y;
+            // const highestX = flatten(cPatern).sort((a, b) => b.x - a.x)[0].x;
+            // const yDist = (highestY - lowestY) / 2;
+            // const xDist = (highestX - lowestX) / 2;
+            // const highestValue = [xDist, yDist].sort((a, b) => b - a)[0];
+            let paternPosition = { x: 0, y: 0 };
+            const groupedPoints = valuesOfSorter.map((value, vIndex) => {
+                const datsPoints = filteredData().filter(item => item[sorter] === value);
+                const sizeRatio = datsPoints.length / filteredData().length;
+                const scaledPatern = customSortablePaterns.find(item => item.name === patern).patern.map(item => item.map(_item => ({ x: (_item.x * sizeRatio * 8.25), y: (_item.y * sizeRatio * 8.25) })));
+                const flattenedPattern = uniq(scaledPatern);
+                const lowestY = flatten(flattenedPattern).sort((a, b) => a.y - b.y)[0].y;
+                const lowestX = flatten(flattenedPattern).sort((a, b) => a.x - b.x)[0].x;
+                const highestY = flatten(flattenedPattern).sort((a, b) => b.y - a.y)[0].y;
+                const highestX = flatten(flattenedPattern).sort((a, b) => b.x - a.x)[0].x;
+                const xDist = (highestX - lowestX) / 2;
+                const shiftedPatern = scaledPatern.map(item => item.map(_item => ({ x: (_item.x - (xDist + lowestX)) + paternPosition.x + 50 + (vIndex % 2 === 0 ? (highestX / 2) + 2 : ((highestX / 2) + 2) * -1), y: _item.y + paternPosition.y })))
+                console.log(highestX);
+                // paternPosition.x += highestX + 1;
+                paternPosition.y += highestY + 1;
+                return { points: datsPoints, patern: shiftedPatern };
+            });
+            let mergedPatren = [];
+            let mergedPoints = [];
+            console.log(groupedPoints);
+            groupedPoints.forEach(item => {
+                // console.log(item.points);
+                mergedPatren = [...mergedPatren, ...item.patern];
+                mergedPoints = [...mergedPoints, ...item.points];
+                // console.log(groupedPoints);
+                
+            });
+            console.log(mergedPoints);
+            console.log(mergedPatren);
+            setPositions(mergedPoints.map((item, index, arr) => plotToPaths(mergedPatren, (index === 0 ? .000000001 : index) / arr.length)));
+            // setPositions(filteredData().map((item, index, arr) => plotToPaths(item.patern, (index === 0 ? .000000001 : index) / arr.length)));
+            // console.log(mergedPoints);
+            // const indexedValues = valuesOfSorter.map((item, index) => ({ item, index, count: 0 }));
+        }
     }
     useEffect(() => {
         arrangePoints();
-    }, [sorter]);
+    }, [sorter, patern]);
     return (
         <div className="particle-chart">
             <div
