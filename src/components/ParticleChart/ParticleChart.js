@@ -3,6 +3,7 @@ import DataPoint from "../DataPoint/DataPoint";
 import { uniq, flatten } from 'lodash';
 import { generateID } from '../../utils/Utilities';
 import SorterMenu from "../SorterMenu/SorterMenu";
+import Filters from "../Filters/Filters";
 import { plotToPaths } from "../../utils/Utilities";
 import './ParticleChart.css';
 const ParticleChart = (props) => {
@@ -11,6 +12,7 @@ const ParticleChart = (props) => {
     const valueMetrics = props.data.valueMetrics;
     const customSortablePaterns = props.data.custom.sortables;
     const customSinglePaterns = props.data.custom.singles;
+    const [activeFilters, setActiveFilters] = useState({});
     const [sorter, setSorter] = useState('Publisher');
     const [patern, setPatern] = useState('bar');
     const [positions, setPositions] = useState([]);
@@ -19,8 +21,28 @@ const ParticleChart = (props) => {
         setSorter(item.name);
         setPatern(item.patern);
     }
+    const filterables = () => {
+        return props.data.filters.map(item => {
+            return {
+                name: item,
+                values: uniq(props.data?.dataset.map(_item => _item[item]))
+            }
+        });
+    }
+    const filterHandler = ({ name, values }) => {
+        const tempFilters = { ...activeFilters };
+        tempFilters[name] = values;
+        setActiveFilters(tempFilters);
+    }
     const filteredData = () => {
-        return props.data?.dataset ? props.data?.dataset : props.data;
+        const rawData = props.data?.dataset ? props.data?.dataset : props.data;
+        return rawData.filter(item => {
+            const activeFilterNames =  Object.keys(activeFilters);
+            const filterChecks = Object.keys(activeFilters).filter(_item => {
+                return !activeFilters[_item].length || activeFilters[_item].includes(item[_item]);
+            });
+            return !activeFilterNames.length || filterChecks.length === activeFilterNames.length;
+        });
     }
     const arrangePoints = () => {
         console.log(customSinglePaterns);
@@ -144,7 +166,7 @@ const ParticleChart = (props) => {
     }
     useEffect(() => {
         arrangePoints();
-    }, [sorter, patern]);
+    }, [sorter, patern, activeFilters]);
     return (
         <div className="particle-chart">
             <div
@@ -164,6 +186,11 @@ const ParticleChart = (props) => {
                 onSelectSorter={sorterHandler}
                 sorters={props.data.sorters}
             />
+            <Filters
+                filterables={filterables()}
+                onFiltered={filterHandler}
+            />
+            <p>{JSON.stringify(activeFilters)}</p>
         </div>
     )
 }
