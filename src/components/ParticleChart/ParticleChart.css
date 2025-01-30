@@ -1,5 +1,17 @@
-.chart-container{
-    position: relative;
+.outer-chart{
     width: 500px;
     height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+.outer-chart .chart-container{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: all, 1s;
+}
+
+.outer-chart .chart-container.bar{
+    width: 60%;
 }

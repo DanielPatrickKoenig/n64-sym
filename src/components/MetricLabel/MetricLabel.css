@@ -1,0 +1,29 @@
+.metric-label{
+    pointer-events: none;
+    position: absolute;
+}
+
+.metric-label.line{
+    width: 0;
+    transform: rotate(45deg);
+}
+
+.metric-label.bar{
+    transform: translate(-100%, -50%);
+}
+
+.metric-label.custom-left{
+    transform: translateY(-50%);
+    padding-left: 6px;
+}
+
+.metric-label.custom-right{
+    transform: translate(-100%, -50%);
+    padding-right: 5px;
+}
+
+.metric-label label{
+    display: block;
+    font-size: 10px;
+    
+}

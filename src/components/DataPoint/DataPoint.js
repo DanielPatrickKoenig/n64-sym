@@ -74,8 +74,6 @@ const DataPoint = (props) => {
     return (<div
         className="data-point"
         style={{left: `${xPos}%`, top: `${yPos}%`}}
-    >
-        A
-    </div>)
+    />)
 };
 export default DataPoint;

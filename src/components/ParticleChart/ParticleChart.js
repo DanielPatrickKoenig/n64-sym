@@ -6,6 +6,7 @@ import SorterMenu from "../SorterMenu/SorterMenu";
 import Filters from "../Filters/Filters";
 import { plotToPaths } from "../../utils/Utilities";
 import './ParticleChart.css';
+import MetricLabel from "../MetricLabel/MetricLabel";
 const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
@@ -17,6 +18,7 @@ const ParticleChart = (props) => {
     const [patern, setPatern] = useState('bar');
     const [positions, setPositions] = useState([]);
     const [motionSignature, setMotionSignature] = useState('empty');
+    const [labels, setLabels] = useState([]);
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
@@ -48,6 +50,7 @@ const ParticleChart = (props) => {
         console.log(customSinglePaterns);
         setMotionSignature(generateID());
         const valuesOfSorter = uniq(filteredData().map(item => item[sorter]));
+        // setLabels(valuesOfSorter);
         if (sortablePaterns.includes(patern)) {
             const indexedValues = valuesOfSorter.map((item, index) => ({ item, index, count: 0 }));
             const posList = filteredData().map(item => {
@@ -63,12 +66,14 @@ const ParticleChart = (props) => {
             if (patern === 'bar'){
 
                 const growVals = { x: growValPositionAxis, y: growValIndexAxis };
-                setPositions(posList.map(item => ({ ...item, x: item.paternPosition * growVals.x, y: item.paternIndex * growVals.y })))
+                setPositions(posList.map(item => ({ ...item, x: item.paternPosition * growVals.x, y: (item.paternIndex * growVals.y) + (growVals.y * .5) })))
+                setLabels(valuesOfSorter.map((item, index) => ({ name: item, x: -2, y: (index * growVals.y) + (growVals.y * .5)})));
             }
             if (patern === 'line'){
 
                 const growVals = { x: growValIndexAxis, y: growValPositionAxis };
-                setPositions(posList.map(item => ({ ...item, x: item.paternIndex * growVals.x, y: 100 - (item.paternPosition * growVals.y) })))
+                setPositions(posList.map(item => ({ ...item, x: (item.paternIndex * growVals.x) + (growVals.x * .5), y: 100 - (item.paternPosition * growVals.y) })))
+                setLabels(valuesOfSorter.map((item, index) => ({ name: item, x: (index * growVals.x) + (growVals.x * .5), y: 100 })));
             }
         }
         else if (singlePatterns.includes(patern)) {
@@ -144,7 +149,7 @@ const ParticleChart = (props) => {
                 console.log(highestX);
                 // paternPosition.x += highestX + 1;
                 paternPosition.y += highestY + 1;
-                return { points: datsPoints, patern: shiftedPatern };
+                return { points: datsPoints, patern: shiftedPatern, lowestY, lowestX, highestY, highestX };
             });
             let mergedPatren = [];
             let mergedPoints = [];
@@ -159,6 +164,17 @@ const ParticleChart = (props) => {
             console.log(mergedPoints);
             console.log(mergedPatren);
             setPositions(mergedPoints.map((item, index, arr) => plotToPaths(mergedPatren, (index === 0 ? .000000001 : index) / arr.length)));
+            
+            setLabels(valuesOfSorter.map((item, index) => {
+                const sortedPaternX = flatten(groupedPoints[index].patern).sort((a, b) => a.x - b.x);
+                const sortedPaternY = flatten(groupedPoints[index].patern).sort((a, b) => a.y - b.y);
+                return ({ 
+                    name: item, 
+                    x: sortedPaternX[0].x > 50 ? sortedPaternX[sortedPaternX.length - 1].x : sortedPaternX[0].x, 
+                    y: sortedPaternY[0].y + ((sortedPaternY[sortedPaternY.length - 1].y - sortedPaternY[0].y) / 2),
+                    side: sortedPaternX[0].x > 50 ? 'custom-left' : 'custom-right',
+                });
+            }));
             // setPositions(filteredData().map((item, index, arr) => plotToPaths(item.patern, (index === 0 ? .000000001 : index) / arr.length)));
             // console.log(mergedPoints);
             // const indexedValues = valuesOfSorter.map((item, index) => ({ item, index, count: 0 }));
@@ -169,18 +185,30 @@ const ParticleChart = (props) => {
     }, [sorter, patern, activeFilters]);
     return (
         <div className="particle-chart">
-            <div
-                className="chart-container"
-                onClick={() => setSorter('Genre')}
-            >
-                {positions.map(item => (
-                    <DataPoint 
-                        data={item}
-                        x={item.x}
-                        y={item.y}
-                        signature={motionSignature}
-                    />
-                ))}
+            <div className="outer-chart">
+                <div
+                    className={`chart-container ${patern}`}
+                >
+                    {positions.map(item => (
+                        <DataPoint 
+                            data={item}
+                            x={item.x}
+                            y={item.y}
+                            signature={motionSignature}
+                        />
+                    ))}
+                    {(customSortablePaterns.map(item => item.name).includes(patern) || 
+                        sortablePaterns.includes(patern)) && 
+                        labels.map(item => (
+                            <MetricLabel
+                                label={item.name}
+                                patern={patern}
+                                x={item.x}
+                                y={item.y}
+                                side={item.side}
+                            />
+                        ))}
+                </div>
             </div>
             <SorterMenu
                 onSelectSorter={sorterHandler}
