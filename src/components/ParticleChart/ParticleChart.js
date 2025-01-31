@@ -50,6 +50,7 @@ const ParticleChart = (props) => {
         console.log(customSinglePaterns);
         setMotionSignature(generateID());
         const valuesOfSorter = uniq(filteredData().map(item => item[sorter]));
+        const valueLabelsWithGroups = valuesOfSorter.map(value => `${value} (${filteredData().filter(item => item[sorter] === value).length})`)
         // setLabels(valuesOfSorter);
         if (sortablePaterns.includes(patern)) {
             const indexedValues = valuesOfSorter.map((item, index) => ({ item, index, count: 0 }));
@@ -67,13 +68,13 @@ const ParticleChart = (props) => {
 
                 const growVals = { x: growValPositionAxis, y: growValIndexAxis };
                 setPositions(posList.map(item => ({ ...item, x: item.paternPosition * growVals.x, y: (item.paternIndex * growVals.y) + (growVals.y * .5) })))
-                setLabels(valuesOfSorter.map((item, index) => ({ name: item, x: -2, y: (index * growVals.y) + (growVals.y * .5)})));
+                setLabels(valueLabelsWithGroups.map((item, index) => ({ name: item, x: -2, y: (index * growVals.y) + (growVals.y * .5)})));
             }
             if (patern === 'line'){
 
                 const growVals = { x: growValIndexAxis, y: growValPositionAxis };
                 setPositions(posList.map(item => ({ ...item, x: (item.paternIndex * growVals.x) + (growVals.x * .5), y: 100 - (item.paternPosition * growVals.y) })))
-                setLabels(valuesOfSorter.map((item, index) => ({ name: item, x: (index * growVals.x) + (growVals.x * .5), y: 100 })));
+                setLabels(valueLabelsWithGroups.map((item, index) => ({ name: item, x: (index * growVals.x) + (growVals.x * .5), y: 100 })));
             }
         }
         else if (singlePatterns.includes(patern)) {
@@ -167,7 +168,7 @@ const ParticleChart = (props) => {
             console.log(mergedPatren);
             setPositions(mergedPoints.map((item, index, arr) => plotToPaths(mergedPatren, (index === 0 ? .000000001 : index) / arr.length)));
             
-            setLabels(valuesOfSorter.map((item, index) => {
+            setLabels(valueLabelsWithGroups.map((item, index) => {
                 const sortedPaternX = flatten(groupedPoints[index].patern).sort((a, b) => a.x - b.x);
                 const sortedPaternY = flatten(groupedPoints[index].patern).sort((a, b) => a.y - b.y);
                 return ({ 
