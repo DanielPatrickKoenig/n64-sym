@@ -5,8 +5,8 @@
 }
 .data-point::after {
     content: '';
-    width: 4px;
-    height: 4px;
+    width: .33rem;
+    height: .33rem;
     display: block;
     background-color: #333333;
     border-radius: 100%;

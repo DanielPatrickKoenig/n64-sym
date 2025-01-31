@@ -24,16 +24,16 @@
 
 .metric-label.custom-left{
     transform: translateY(-50%);
-    padding-left: 6px;
+    padding-left: .6rem;
 }
 
 .metric-label.custom-right{
     transform: translate(-100%, -50%);
-    padding-right: 5px;
+    padding-right: .5rem;
 }
 
 .metric-label label{
     display: block;
-    font-size: 10px;
+    font-size: 1rem;
     
 }
