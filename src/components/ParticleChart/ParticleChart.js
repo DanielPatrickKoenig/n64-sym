@@ -98,6 +98,7 @@ const ParticleChart = (props) => {
                 });
                 // console.log(lines);
                 setPositions(filteredData().map((item, index, arr) => plotToPaths(lines, (index === 0 ? .000000001 : index) / arr.length)));
+                setLabels(valuesOfSorter.map((item, index) => ({ name: item, x: lines[0][index].x, y: 100 })));
             }
             else if (patern === 'scatter') {
                 const [ xMetric, yMetric ] = valueMetrics;
@@ -110,6 +111,7 @@ const ParticleChart = (props) => {
                 const positions = filteredData().map(item => ({ x: ((item[xMetric] - lowestX) / highestX) * 100, y: 100 - (((item[yMetric] - lowestY) / highestY) * 100) }))
                 console.log(positions);
                 setPositions(positions);
+                setLabels(valueMetrics.map((item, index) => ({ name: item, x: index === 0 ? 50 : 0, y: index === 0 ? 100 : 50 })));
             }
         }
         else if (customSinglePaterns.find(item => item?.name === patern)) {
@@ -198,7 +200,8 @@ const ParticleChart = (props) => {
                         />
                     ))}
                     {(customSortablePaterns.map(item => item.name).includes(patern) || 
-                        sortablePaterns.includes(patern)) && 
+                        sortablePaterns.includes(patern) ||
+                        singlePatterns.includes(patern)) && 
                         labels.map(item => (
                             <MetricLabel
                                 label={item.name}

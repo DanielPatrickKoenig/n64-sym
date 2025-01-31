@@ -3,13 +3,23 @@
     position: absolute;
 }
 
-.metric-label.line{
+.metric-label.line,
+.metric-label.time{
     width: 0;
     transform: rotate(45deg);
 }
 
 .metric-label.bar{
     transform: translate(-100%, -50%);
+}
+
+.metric-label.scatter{
+    transform: translateX(-50%);
+}
+
+.metric-label.scatter ~ .scatter{
+    transform-origin: top center;
+    transform: translateX(-50%) rotate(90deg);
 }
 
 .metric-label.custom-left{
