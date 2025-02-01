@@ -1,0 +1,75 @@
+.filters{
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 30rem;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    top: 10rem;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgba(100,100,100, .8);
+}
+.filters ul{
+    margin: 0;
+    padding: 0;
+}
+.filters li{
+    text-align: left;
+    display: block;
+    margin: 0;
+    padding: 1rem .5rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.filters li ul li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #999999;
+}
+.filters li label{
+    font-size: 2rem;
+}
+.filters li input{
+    width: 2rem;
+    height: 2rem;
+}
+.show-filters ~ .filters{
+    display: block;
+}
+
+.filters .filter-section-toggle{
+    display: block;
+    font-size: 2.5rem;
+}
+
+.filters h2{
+    font-size: 3rem;
+}
+
+.filters li.heading{
+    border: none;
+}
+
+@media screen and (min-width: 768px) {
+    .filters{
+        display: block;
+        width: 15rem;
+        position: static;
+        overflow: auto;
+        background-color: transparent;
+        border-left: 1px solid #cccccc;
+    }
+    .filters li label{
+        font-size: 1.25rem;
+    }
+    .filters .filter-section-toggle{
+        display: block;
+        font-size: 1.5rem;
+    }
+    .filters h2{
+        font-size: 2rem;
+    }
+}

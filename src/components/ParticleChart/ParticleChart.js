@@ -7,6 +7,7 @@ import Filters from "../Filters/Filters";
 import { plotToPaths } from "../../utils/Utilities";
 import './ParticleChart.css';
 import MetricLabel from "../MetricLabel/MetricLabel";
+import AppHeader from '../AppHeader/AppHeader';
 const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
@@ -188,6 +189,11 @@ const ParticleChart = (props) => {
     }, [sorter, patern, activeFilters]);
     return (
         <div className="particle-chart">
+            <AppHeader />
+            <SorterMenu
+                onSelectSorter={sorterHandler}
+                sorters={props.data.sorters}
+            />
             <div className="outer-chart">
                 <div
                     className={`chart-container ${patern}`}
@@ -214,15 +220,10 @@ const ParticleChart = (props) => {
                         ))}
                 </div>
             </div>
-            <SorterMenu
-                onSelectSorter={sorterHandler}
-                sorters={props.data.sorters}
-            />
             <Filters
                 filterables={filterables()}
                 onFiltered={filterHandler}
             />
-            <p>{JSON.stringify(activeFilters)}</p>
         </div>
     )
 }

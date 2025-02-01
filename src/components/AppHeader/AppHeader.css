@@ -1,0 +1,37 @@
+.app-header{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 10rem;
+    background-color: #cc7c8c;
+}
+
+.app-header h1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 4rem;
+}
+
+.app-header button{
+    position: relative;
+}
+
+@media screen and (min-width: 768px) {
+    .app-header{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6rem;
+    }
+    h1{
+        margin: .75rem;
+        padding: 0;
+    }
+    .app-header button{
+        display: none;
+    }
+}
