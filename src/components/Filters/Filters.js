@@ -3,6 +3,8 @@ import Checkboxes from '../Checkboxes/Checkboxes';
 import { useState } from 'react';
 const Filters = (props) => {
     const [expandStates, setExpandStates] = useState(props.filterables.map(item => ({ name: item.name, open: false })));
+    const [confirmationNumber, setConfirmationNumbrer] = useState(1);
+    const [confirmableValues, setConfirmableValues] = useState({});
     const toggleSection = (index) => {
         const tempStates = { ...expandStates };
         tempStates[index].open = !tempStates[index].open; 
@@ -10,6 +12,17 @@ const Filters = (props) => {
     }
     const selectionHandler = ({ name, values }) => {
         props.onFiltered({ name, values })
+    }
+    const selectionHandlerForConfirmation = ({ name, values }) => {
+        const tempValues = { ...confirmableValues };
+        tempValues[name] = values;
+        setConfirmableValues(tempValues);
+    }
+    const confirmSelections = () => {
+        setConfirmationNumbrer(confirmationNumber + 1);
+        Object.keys(confirmableValues).forEach(item => {
+            props.onFiltered({ name: item, values: confirmableValues[item] });
+        });
     }
     return (
         <ul className="filters">
@@ -27,10 +40,15 @@ const Filters = (props) => {
                             values={item.values}
                             name={item.name}
                             onSelection={selectionHandler}
+                            onSelectionForConfirmation={selectionHandlerForConfirmation}
+                            confirmationNumber={confirmationNumber}
                         />
                     </div>
                 </li>
             ))}
+            <li className="confirm-item">
+                <button onClick={confirmSelections}>CONFIRM</button>
+            </li>
         </ul>
     )
 }

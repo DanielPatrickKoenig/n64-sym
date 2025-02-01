@@ -189,7 +189,11 @@ const ParticleChart = (props) => {
     }, [sorter, patern, activeFilters]);
     return (
         <div className="particle-chart">
-            <AppHeader />
+            <AppHeader
+                filters={activeFilters}
+                sorter={sorter}
+                count={positions.length}
+            />
             <SorterMenu
                 onSelectSorter={sorterHandler}
                 sorters={props.data.sorters}

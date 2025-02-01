@@ -10,6 +10,7 @@
     bottom: 0;
     overflow: auto;
     background-color: rgba(100,100,100, .8);
+    padding-bottom: 8rem;
 }
 .filters ul{
     margin: 0;
@@ -52,7 +53,27 @@
 .filters li.heading{
     border: none;
 }
-
+.filters .check-box-list .confirm-item{
+    display: none;
+}
+.filters .check-box-list .non-confirmable-check{
+    display: none;
+}
+.filters .check-box-list .confirmable-check{
+    display: inline-block;
+}
+.filters .confirm-item{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 29rem;
+    background-color: #333333;
+    text-align: center;
+}
+.filters .confirm-item button{
+    width: 90%;
+}
 @media screen and (min-width: 768px) {
     .filters{
         display: block;
@@ -72,4 +93,14 @@
     .filters h2{
         font-size: 2rem;
     }
+    .filters .confirm-item{
+        display: none;
+    }
+    .filters .check-box-list .non-confirmable-check{
+        display: inline-block;
+    }
+    .filters .check-box-list .confirmable-check{
+        display: none;
+    }
+    
 }
