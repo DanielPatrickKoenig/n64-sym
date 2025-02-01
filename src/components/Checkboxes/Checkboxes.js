@@ -4,7 +4,6 @@ const CheckboxGroup = (props) => {
     const [selectedValues, setSelectedValues] = useState([...new Array(props.values.length).keys()].map(() => false));
     const onCheckChange = (e) => {
         const selectedValue = e.target.value;
-        console.log(selectedValue);
         const tempValues = selectedValues.map((item, index) =>
             Number(index) === Number(selectedValue) ? !item : item
         );
@@ -14,13 +13,15 @@ const CheckboxGroup = (props) => {
     return (<ul>
         {selectedValues.map((n, i) => (
             <li>
-                <input
-                    type="checkbox"
-                    value={i}
-                    checked={n}
-                    onChange={onCheckChange}
-                />
-                <label>{props.values[i]}</label>
+                <label>
+                    <input
+                        type="checkbox"
+                        value={i}
+                        checked={n}
+                        onChange={onCheckChange}
+                    />
+                    {props.values[i]}
+                </label>
             </li>
         ))}
     </ul>)

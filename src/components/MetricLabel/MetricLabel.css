@@ -2,15 +2,23 @@
     pointer-events: none;
     position: absolute;
 }
-
+.metric-label label{
+    display: block;
+    font-size: 1.5rem;
+    
+}
 .metric-label.line,
 .metric-label.time{
     width: 0;
-    transform: rotate(45deg);
+    transform: rotate(90deg);
+    white-space: nowrap;
 }
 
 .metric-label.bar{
     transform: translate(-100%, -50%);
+}
+.metric-label.bar label{
+    font-size: 1rem;
 }
 
 .metric-label.scatter{
@@ -31,9 +39,15 @@
     transform: translate(-100%, -50%);
     padding-right: .5rem;
 }
-
-.metric-label label{
-    display: block;
-    font-size: 1rem;
-    
+@media screen and (min-width: 768px) {
+    .metric-label.line,
+    .metric-label.time{
+        width: 0;
+        transform: rotate(45deg);
+    }
+    .metric-label label{
+        display: block;
+        font-size: 1rem;
+        
+    }
 }

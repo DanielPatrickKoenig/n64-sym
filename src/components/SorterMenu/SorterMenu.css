@@ -1,0 +1,58 @@
+.sorters{
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 30rem;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    top: 10rem;
+    bottom: 0;
+    overflow: auto;
+    background-color: rgba(100,100,100, .8);
+
+}
+.show-sorters ~ .sorters{
+    display: flex;
+    flex-direction: column;
+}
+.sorters button{
+    width: 100%;
+    height: 5rem;
+    font-size: 2.5rem;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    text-align: left;
+
+}
+.sorters li,
+.sorters h2{
+    text-align: left;
+    padding-left: .5rem;
+}
+
+.sorters h2{
+    font-size: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+    .sorters{
+        display: block;
+        width: 15rem;
+        position: static;
+        overflow: auto;
+        background-color: transparent;
+        border-right: 1px solid #cccccc;
+    
+    }
+    .sorters button{
+        height: 3rem;
+        font-size: 1.5rem;
+    
+    }
+    .sorters h2{
+        font-size: 2rem;
+    }
+}
