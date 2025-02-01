@@ -39,16 +39,17 @@ const CheckboxGroup = (props) => {
     return (<ul className="check-box-list">
         {selectedValues.map((n, i) => (
             <li>
-                <label>
+                <label className="non-confirmable-check">
                     <input
-                        className="non-confirmable-check"
                         type="checkbox"
                         value={i}
                         checked={n}
                         onChange={onCheckChange}
                     />
+                    {props.values[i]}
+                </label>
+                <label className="confirmable-check">
                     <input
-                        className="confirmable-check"
                         type="checkbox"
                         value={i}
                         checked={selectedValuesForConfirmation[i]}
