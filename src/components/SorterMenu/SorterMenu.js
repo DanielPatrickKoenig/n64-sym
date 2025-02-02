@@ -2,6 +2,11 @@ import { useState } from 'react';
 import './SorterMenu.css';
 const SorterMenu = (props) => {
     const [selectedSorter, setSelectedSorter] = useState('');
+    const [selectedButton, setSelectedButton] = useState({});
+    const sorterButtonClicked = (value) => {
+        setSelectedButton(value);
+        props.onSelectSorter(value);
+    }
     const onConfermableChange = (e) => {
         if (e.target.checked) {
             const tempSelector = e.target.value;
@@ -18,8 +23,8 @@ const SorterMenu = (props) => {
             {props.sorters.map((item, index) => (
                 <li key={index}>
                     <button 
-                        onClick={() => props.onSelectSorter(item)}
-                        className="sorter-btn"
+                        onClick={() => sorterButtonClicked(item)}
+                        className={`sorter-btn ${item === selectedButton ? 'sorter-btn-selected' : ''}`}
                     >
                         {item.name}
                     </button>

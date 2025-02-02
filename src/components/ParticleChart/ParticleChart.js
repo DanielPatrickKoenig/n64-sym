@@ -198,7 +198,7 @@ const ParticleChart = (props) => {
                 onSelectSorter={sorterHandler}
                 sorters={props.data.sorters}
             />
-            <div className="outer-chart">
+            <div className={`outer-chart outer-chart-${patern}`}>
                 <div
                     className={`chart-container ${patern}`}
                 >

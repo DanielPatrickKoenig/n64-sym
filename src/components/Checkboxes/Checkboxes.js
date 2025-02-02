@@ -46,7 +46,7 @@ const CheckboxGroup = (props) => {
                         checked={n}
                         onChange={onCheckChange}
                     />
-                    {props.values[i]}
+                    <span>{props.values[i]}</span>
                 </label>
                 <label className="confirmable-check">
                     <input
@@ -55,7 +55,7 @@ const CheckboxGroup = (props) => {
                         checked={selectedValuesForConfirmation[i]}
                         onChange={onCheckChangeForConfirmation}
                     />
-                    {props.values[i]}
+                    <span>{props.values[i]}</span>
                 </label>
             </li>
         ))}
