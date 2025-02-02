@@ -20,6 +20,9 @@
         padding-top: 6rem;
         display: flex;
         justify-content: center;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .outer-chart{
         width: 50rem;

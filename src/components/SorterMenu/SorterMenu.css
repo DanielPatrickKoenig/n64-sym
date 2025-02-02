@@ -44,6 +44,17 @@
 .sorters .confirm-item button{
     width: 90%;
 }
+.sorters li label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 3rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #999999;
+}
+.sorters li label input{
+    margin-right: 1rem;
+}
 
 @media screen and (min-width: 768px) {
     .sorters{
@@ -53,6 +64,7 @@
         overflow: auto;
         background-color: transparent;
         border-right: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
     
     }
     .sorters h2{
