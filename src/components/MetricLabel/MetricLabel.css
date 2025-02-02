@@ -1,6 +1,35 @@
+@keyframes fade-in-metric-label-1 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+@keyframes fade-in-metric-label-2 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
 .metric-label{
     pointer-events: none;
     position: absolute;
+    animation-name: fade-in-metric-label-1;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+.metric-label-1{
+    animation-name: fade-in-metric-label-1;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+.metric-label-2{
+    animation-name: fade-in-metric-label-2;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
 }
 .metric-label label{
     display: block;
