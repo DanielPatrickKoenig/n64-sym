@@ -10,15 +10,12 @@
 .metric-label.line,
 .metric-label.time{
     width: 0;
-    transform: rotate(90deg);
+    transform: rotate(45deg);
     white-space: nowrap;
 }
 
 .metric-label.bar{
     transform: translate(-100%, -50%);
-}
-.metric-label.bar label{
-    font-size: 1rem;
 }
 
 .metric-label.scatter{

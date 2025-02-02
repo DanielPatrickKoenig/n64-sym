@@ -21,14 +21,21 @@
     display: block;
     margin: 0;
     padding: 1rem .5rem;
-    border-bottom: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
 }
 
-.filters li ul li{
+.filters li ul li {
+    border-top: 1px solid #cccccc;
+}
+
+.filters li ul li:first-child{
+    border-top: none;
+}
+
+.filters li ul li label{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid #999999;
 }
 .filters li label{
     font-size: 2rem;
@@ -45,12 +52,14 @@
     display: block;
     font-size: 3rem;
     display: block;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     font-weight: bold;
 }
 
 .filters h2{
     font-size: 3rem;
+    padding: 0 1rem;
+    margin-top: 1.5rem;
 }
 
 .filters li.heading{
@@ -91,21 +100,37 @@
         border-bottom: 1px solid #cccccc;
     }
     .filters li label{
-        font-size: 1.25rem;
+        display: flex;
+        flex-wrap: nowrap;
+        font-size: 2rem;
+        align-items: center;
     }
+    .filters li ul li{
+        display: flex;
+        flex-wrap: nowrap;
+        font-size: 2rem;
+        align-items: center;
+    }
+    .filters li ul li label span{
+        display: inline-block;
+        max-width: 10rem;
+    }
+    
     .filters .filter-section-toggle{
         display: block;
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding: 0;
     }
     .filters h2{
         font-size: 2rem;
+        padding-left: 0;
+        margin-top: .75rem;
     }
     .filters .confirm-item{
         display: none;
     }
     .filters .check-box-list .non-confirmable-check{
-        display: inline-block;
+        display: flex;
     }
     .filters .check-box-list .confirmable-check{
         display: none;

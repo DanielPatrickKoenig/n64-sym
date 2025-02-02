@@ -3,6 +3,10 @@
     height: 60rem;
     margin: 2rem auto;
     position: relative;
+    transition: height, 1s;
+}
+.outer-chart.outer-chart-bar{
+    height: 80rem;
 }
 .outer-chart .chart-container{
     position: absolute;
@@ -13,7 +17,7 @@
 }
 
 .outer-chart .chart-container.bar{
-    width: 60%;
+    width: 75%;
 }
 @media screen and (min-width: 768px) {
     .particle-chart{
@@ -28,5 +32,8 @@
         width: 50rem;
         height: 50rem;
         margin: 2rem 4rem;
+    }
+    .outer-chart.outer-chart-bar{
+        height: 50rem;
     }
 }
