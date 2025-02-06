@@ -17,6 +17,33 @@
 
 .app-header button{
     position: relative;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+}
+
+.app-header button .nav-icon{
+    position: relative;
+    background-color: transparent;
+    border: none;
+    width: 4.5rem;
+    display: block;
+}
+.app-header button .nav-icon path,
+.app-header button .nav-icon polygon{
+    color: #ffffff;
+}
+
+.app-header button .filter-count{
+    position: absolute;
+    top: .3rem;
+    right: .3rem;
+    background-color: #ff0000;
+    padding: .1rem 1rem;
+    color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 .1rem #ffffff inset;
+    font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
