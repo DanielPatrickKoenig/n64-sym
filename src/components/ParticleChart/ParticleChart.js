@@ -20,6 +20,7 @@ const ParticleChart = (props) => {
     const [positions, setPositions] = useState([]);
     const [motionSignature, setMotionSignature] = useState('empty');
     const [labels, setLabels] = useState([]);
+    const [mainLabelToggle, setMainLabelToggle] = useState(1);
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
@@ -47,8 +48,13 @@ const ParticleChart = (props) => {
             return !activeFilterNames.length || filterChecks.length === activeFilterNames.length;
         });
     }
+    const shouldShowLabels = () => {
+        return customSortablePaterns.map(item => item.name).includes(patern) || 
+            sortablePaterns.includes(patern) ||
+            singlePatterns.includes(patern);
+    }
     const arrangePoints = () => {
-        console.log(customSinglePaterns);
+        setMainLabelToggle(mainLabelToggle % 2 === 0 ? 1 : 2);
         setMotionSignature(generateID());
         const valuesOfSorter = uniq(filteredData().map(item => item[sorter]));
         const valueLabelsWithGroups = valuesOfSorter.map(value => `${value} (${filteredData().filter(item => item[sorter] === value).length})`)
@@ -194,6 +200,9 @@ const ParticleChart = (props) => {
                 sorter={sorter}
                 count={positions.length}
             />
+            {props.data.sorters.map(item => (
+                <h2 className={`particle-chart-header ${item.name === sorter ? 'current-info-header' : 'hidden-info-header'} ${shouldShowLabels() ? 'has-labels' : 'has-no-babels'}`}>{item.name}</h2>
+            ))}
             <SorterMenu
                 onSelectSorter={sorterHandler}
                 sorters={props.data.sorters}
@@ -210,9 +219,7 @@ const ParticleChart = (props) => {
                             signature={motionSignature}
                         />
                     ))}
-                    {(customSortablePaterns.map(item => item.name).includes(patern) || 
-                        sortablePaterns.includes(patern) ||
-                        singlePatterns.includes(patern)) && 
+                    {shouldShowLabels() && 
                         labels.map(item => (
                             <MetricLabel
                                 label={item.name}

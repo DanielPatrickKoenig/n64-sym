@@ -1,7 +1,7 @@
 .outer-chart{
     width: 60rem;
     height: 60rem;
-    margin: 2rem auto;
+    margin: 7rem auto 2rem;
     position: relative;
     transition: height, 1s;
 }
@@ -19,6 +19,23 @@
 .outer-chart .chart-container.bar{
     width: 75%;
 }
+.particle-chart .particle-chart-header{
+    font-size: 3.5rem;
+    transition: opacity, 1s;
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    right: 0;
+}
+.particle-chart .current-info-header{
+    opacity: 1;
+}
+.particle-chart .hidden-info-header{
+    opacity: 0;
+}
+.particle-chart .particle-chart-header.has-no-babels {
+    top: 40rem;
+}
 @media screen and (min-width: 768px) {
     .particle-chart{
         padding-top: 6rem;
@@ -35,5 +52,15 @@
     }
     .outer-chart.outer-chart-bar{
         height: 50rem;
+    }
+    .particle-chart .particle-chart-header{
+        font-size: 3rem;
+        top: 4rem;
+    }
+    .outer-chart.outer-chart{
+        margin-top: 6rem;
+    }
+    .particle-chart .particle-chart-header.has-no-babels {
+        top: 32rem;
     }
 }

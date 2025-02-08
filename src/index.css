@@ -33,3 +33,38 @@ code {
 button{
   font-family: "Sofia Sans Extra Condensed", serif;
 }
+
+@keyframes fade-in-metric-label-1 {
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 100%;
+  }
+}
+@keyframes fade-in-metric-label-2 {
+  0%{
+      opacity: 0;
+  }
+  100%{
+      opacity: 100%;
+  }
+}
+
+@keyframes show-heading {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+
+@keyframes hide-heading {
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+  }
+}
