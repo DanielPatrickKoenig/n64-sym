@@ -8,6 +8,7 @@ import { plotToPaths } from "../../utils/Utilities";
 import './ParticleChart.css';
 import MetricLabel from "../MetricLabel/MetricLabel";
 import AppHeader from '../AppHeader/AppHeader';
+import Decorators from "../Decoratiors/Decorators";
 const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
@@ -229,6 +230,10 @@ const ParticleChart = (props) => {
                                 side={item.side}
                             />
                         ))}
+                    <Decorators
+                        labels={labels}
+                        patern={patern}
+                    />
                 </div>
             </div>
             <Filters
