@@ -19,6 +19,9 @@
 .outer-chart .chart-container.bar{
     width: 75%;
 }
+.outer-chart .chart-container.scatter{
+    box-shadow: .05rem -.05rem 0 #ffffff inset;
+}
 .particle-chart .particle-chart-header{
     font-size: 3.5rem;
     transition: opacity, 1s;
@@ -35,6 +38,32 @@
 }
 .particle-chart .particle-chart-header.has-no-babels {
     top: 40rem;
+}
+.chart-container.scatter::before{
+    position: absolute;
+    content: '';
+    left: 33%;
+    top: 0;
+    width: 33%;
+    height: 100%;
+    border-left: .05rem solid rgba(255,255,255,.5);
+    border-right: .05rem solid rgba(255,255,255,.5);
+    animation-name: fade-in-metric-label-1;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+}
+.chart-container.scatter::after{
+    position: absolute;
+    content: '';
+    top: 33%;
+    left: 0;
+    height: 33%;
+    width: 100%;
+    border-top: .05rem solid rgba(255,255,255,.5);
+    border-bottom: .05rem solid rgba(255,255,255,.5);
+    animation-name: fade-in-metric-label-1;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
 }
 @media screen and (min-width: 768px) {
     .particle-chart{
