@@ -38,7 +38,7 @@ const CheckboxGroup = (props) => {
     }, [props.confirmationNumber])
     return (<ul className="check-box-list">
         {selectedValues.map((n, i) => (
-            <li>
+            <li className={props.styleIndexes?.length ? props.styleIndexes[i] : ''}>
                 <label className="non-confirmable-check">
                     <input
                         type="checkbox"

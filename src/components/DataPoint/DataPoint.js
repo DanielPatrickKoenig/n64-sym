@@ -72,7 +72,7 @@ const DataPoint = (props) => {
         });
     }, [props.x, props.y]);
     return (<div
-        className="data-point"
+        className={`data-point ${props.marked ? 'marked' : ''}`}
         style={{left: `${xPos}%`, top: `${yPos}%`}}
     />)
 };

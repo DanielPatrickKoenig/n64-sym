@@ -1,7 +1,8 @@
 {
     "sortables": [
         "line",
-        "bar"
+        "bar",
+        "name"
     ],
     "singles": [
         "time",
@@ -85,7 +86,7 @@
         },
         {
             "name": "Name",
-            "patern": "diamond"
+            "patern": "name"
         },
         {
             "name": "NA_Sales",

@@ -1,0 +1,137 @@
+.search-data-points{
+    position: absolute;
+    right: 8rem;
+    
+}
+
+.search-data-points .confirmable-check{
+    display: none;
+}
+
+.search-data-points .non-confirmable-check{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.search-data-points .check-box-list{
+    position: absolute;
+    top: 10rem;
+    left: -40rem;
+    background-color: rgba(255,255,255,.85);
+    margin: 0;
+    padding: 0;
+    max-height: 80rem;
+    overflow: auto;
+    z-index: 20;
+
+}
+
+.search-data-points .search-field.is-hiedden ~ .check-box-list{
+    display: none;
+}
+.search-data-points .check-box-list li{
+    display: block;
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid #666666;
+}
+
+.search-data-points .check-box-list li.hidden-row{
+    display: none;
+}
+
+.search-data-points .check-box-list input{
+    min-width: 3rem;
+    min-height: 3rem;
+    margin-right: 2rem;
+}
+
+.search-data-points .check-box-list li label{
+    color: #000000;
+    font-size: 4rem;
+}
+
+.search-data-points .search-field{
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    transform: translate(-100%, 20%);
+    width: 30rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    border: none;
+    box-shadow: 0 0 0 .02rem #333333;
+    padding: .25rem 1rem;
+}
+
+.search-data-points .search-field.is-hiedden{
+    display: none;
+}
+
+.search-data-points .activate-button{
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ffffff;
+    padding-right: .1rem;
+}
+
+.search-data-points .activate-button i{
+    display: flex;
+    width: 8rem;
+    height: 8rem;
+    transform: rotate(-45deg);
+    justify-content: center;
+    align-items: center;
+}
+
+.search-data-points .activate-button i::before{
+    content: '';
+    display: block;
+    width: 30%;
+    height: 7%;
+    background-color: #ffffff;
+}
+
+.search-data-points .activate-button i::after{
+    content: '';
+    display: block;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 .4rem #ffffff;
+}
+.search-data-points .activate-button span{
+    font-size: 2.5rem;
+    margin-top: -2.2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .search-data-points .activate-button i{
+        width: 6rem;
+        height: 6rem;
+        margin-top: -.8rem;
+    }
+    .search-data-points .activate-button span{
+        font-size: 1.8rem;
+        margin-top: -1.5rem;
+    }
+    .search-data-points .activate-button{
+        border-right: none;
+        padding-right: 0;
+        margin-right: -5rem;
+    }
+    .search-data-points .search-field{
+        width: 24rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+    }
+    .search-data-points .check-box-list{
+        top: 6rem;
+        left: -30rem;
+        width: 38rem;
+        max-height: 45rem;
+    }
+
+}

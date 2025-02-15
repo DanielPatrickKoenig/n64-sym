@@ -30,6 +30,7 @@ const AppHeader = (props) => {
                     {filterCount()}
                 </span>}
             </button>
+            {props.children}
         </header>
     )
 }

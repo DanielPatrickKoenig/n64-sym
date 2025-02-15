@@ -9,6 +9,7 @@ import './ParticleChart.css';
 import MetricLabel from "../MetricLabel/MetricLabel";
 import AppHeader from '../AppHeader/AppHeader';
 import Decorators from "../Decoratiors/Decorators";
+import SearchDataPoints from '../SearchDataPoints/SearchDataPoints';
 const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
@@ -22,6 +23,7 @@ const ParticleChart = (props) => {
     const [motionSignature, setMotionSignature] = useState('empty');
     const [labels, setLabels] = useState([]);
     const [mainLabelToggle, setMainLabelToggle] = useState(1);
+    const [searchMarks, setSearchMarks] = useState([]);
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
@@ -48,6 +50,9 @@ const ParticleChart = (props) => {
             });
             return !activeFilterNames.length || filterChecks.length === activeFilterNames.length;
         });
+    }
+    const searchMarkHandler = (values) => {
+        setSearchMarks(values)
     }
     const shouldShowLabels = () => {
         return customSortablePaterns.map(item => item.name).includes(patern) || 
@@ -106,7 +111,7 @@ const ParticleChart = (props) => {
                     ));
                 });
                 // console.log(lines);
-                setPositions(filteredData().map((item, index, arr) => plotToPaths(lines, (index === 0 ? .000000001 : index) / arr.length)));
+                setPositions(filteredData().map((item, index, arr) => ({ ...item, ...plotToPaths(lines, (index === 0 ? .000000001 : index) / arr.length) })));
                 setLabels(valuesOfSorter.map((item, index) => ({ name: item, x: lines[0][index].x, y: 100 })));
             }
             else if (patern === 'scatter') {
@@ -117,7 +122,7 @@ const ParticleChart = (props) => {
                 const highestY = [...filteredData()].sort((a, b) => b[yMetric] - a[yMetric])[0][yMetric] - lowestY;
                 console.log(lowestX, lowestY);
                 console.log(highestX, highestY);
-                const positions = filteredData().map(item => ({ x: ((item[xMetric] - lowestX) / highestX) * 100, y: 100 - (((item[yMetric] - lowestY) / highestY) * 100) }))
+                const positions = filteredData().map(item => ({ ...item, x: ((item[xMetric] - lowestX) / highestX) * 100, y: 100 - (((item[yMetric] - lowestY) / highestY) * 100) }))
                 console.log(positions);
                 setPositions(positions);
                 setLabels(valueMetrics.map((item, index) => ({ name: item, x: index === 0 ? 50 : 0, y: index === 0 ? 100 : 50 })));
@@ -132,8 +137,8 @@ const ParticleChart = (props) => {
             const yDist = (highestY - lowestY) / 2;
             const xDist = (highestX - lowestX) / 2;
             const highestValue = [xDist, yDist].sort((a, b) => b - a)[0];
-            const shiftedPatern = cPatern.map(item => item.map(_item => ({ x: ((_item.x - (xDist + lowestX)) * (40 / highestValue)) + 50, y: ((_item.y - (yDist + lowestY)) * (40 / highestValue)) + 50 })))
-            setPositions(filteredData().map((item, index, arr) => plotToPaths(shiftedPatern, (index === 0 ? .000000001 : index) / arr.length)));
+            const shiftedPatern = cPatern.map(item => item.map(_item => ({ ...item, x: ((_item.x - (xDist + lowestX)) * (40 / highestValue)) + 50, y: ((_item.y - (yDist + lowestY)) * (40 / highestValue)) + 50 })))
+            setPositions(filteredData().map((item, index, arr) => ({ ...item, ...plotToPaths(shiftedPatern, (index === 0 ? .000000001 : index) / arr.length) })));
             console.log(shiftedPatern);
         }
         else if (customSortablePaterns.find(item => item?.name === patern)) {
@@ -156,7 +161,7 @@ const ParticleChart = (props) => {
                 const highestY = flatten(flattenedPattern).sort((a, b) => b.y - a.y)[0].y;
                 const highestX = flatten(flattenedPattern).sort((a, b) => b.x - a.x)[0].x;
                 const xDist = (highestX - lowestX) / 2;
-                const shiftedPatern = scaledPatern.map(item => item.map(_item => ({ x: (_item.x - (xDist + lowestX)) + paternPosition.x + 50 + (vIndex % 2 === 0 ? (highestX / 2) + 2 : ((highestX / 2) + 2) * -1), y: _item.y + paternPosition.y })))
+                const shiftedPatern = scaledPatern.map(item => item.map(_item => ({ ...item, x: (_item.x - (xDist + lowestX)) + paternPosition.x + 50 + (vIndex % 2 === 0 ? (highestX / 2) + 2 : ((highestX / 2) + 2) * -1), y: _item.y + paternPosition.y })))
                 console.log(highestX);
                 // paternPosition.x += highestX + 1;
                 paternPosition.y += highestY + 1;
@@ -174,7 +179,7 @@ const ParticleChart = (props) => {
             });
             console.log(mergedPoints);
             console.log(mergedPatren);
-            setPositions(mergedPoints.map((item, index, arr) => plotToPaths(mergedPatren, (index === 0 ? .000000001 : index) / arr.length)));
+            setPositions(mergedPoints.map((item, index, arr) => ({ ...item, ...plotToPaths(mergedPatren, (index === 0 ? .000000001 : index) / arr.length) })));
             
             setLabels(valueLabelsWithGroups.map((item, index) => {
                 const sortedPaternX = flatten(groupedPoints[index].patern).sort((a, b) => a.x - b.x);
@@ -200,7 +205,12 @@ const ParticleChart = (props) => {
                 filters={activeFilters}
                 sorter={sorter}
                 count={positions.length}
-            />
+            >
+                <SearchDataPoints
+                    onMarked={searchMarkHandler}
+                    dataset={props.data?.dataset}
+                />
+            </AppHeader>
             {props.data.sorters.map(item => (
                 <h2 className={`particle-chart-header ${item.name === sorter ? 'current-info-header' : 'hidden-info-header'} ${shouldShowLabels() ? 'has-labels' : 'has-no-babels'}`}>{item.name}</h2>
             ))}
@@ -215,6 +225,7 @@ const ParticleChart = (props) => {
                     {positions.map(item => (
                         <DataPoint 
                             data={item}
+                            marked={searchMarks.includes(item.Name)}
                             x={item.x}
                             y={item.y}
                             signature={motionSignature}
