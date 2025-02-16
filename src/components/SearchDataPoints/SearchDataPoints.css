@@ -30,6 +30,9 @@
 .search-data-points .search-field.is-hiedden ~ .check-box-list{
     display: none;
 }
+.search-data-points .check-box-list button{
+    display: none;
+}
 .search-data-points .check-box-list li{
     display: block;
     margin: 0;
