@@ -41,7 +41,10 @@ const SorterMenu = (props) => {
                 </li>
             ))}
             <li className="confirm-item">
-                <button onClick={onConfirm}>
+                <button
+                    onClick={onConfirm}
+                    className="btn"
+                >
                     Confirm
                 </button>
             </li>

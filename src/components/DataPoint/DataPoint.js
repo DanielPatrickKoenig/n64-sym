@@ -71,9 +71,15 @@ const DataPoint = (props) => {
             }
         });
     }, [props.x, props.y]);
+    const onPointClicked = () => {
+        if (props.marked) {
+            props.onDataPointClicked();   
+        }
+    }
     return (<div
         className={`data-point ${props.marked ? 'marked' : ''}`}
         style={{left: `${xPos}%`, top: `${yPos}%`}}
+        onClick={onPointClicked}
     />)
 };
 export default DataPoint;

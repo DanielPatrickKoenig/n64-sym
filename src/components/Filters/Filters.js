@@ -47,7 +47,7 @@ const Filters = (props) => {
                 </li>
             ))}
             <li className="confirm-item">
-                <button onClick={confirmSelections}>CONFIRM</button>
+                <button className="btn" onClick={confirmSelections}>CONFIRM</button>
             </li>
         </ul>
     )

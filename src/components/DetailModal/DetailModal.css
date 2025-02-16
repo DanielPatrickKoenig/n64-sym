@@ -1,0 +1,41 @@
+.detail-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.detail-modal .inner-detail-modal{
+    width: 50rem;
+    padding: 4rem;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 3rem;
+}
+
+.detail-modal .inner-detail-modal h2{
+    font-size: 4rem;
+    margin-top: 0;
+}
+
+.detail-modal .inner-detail-modal table{
+    width: 100%;
+    font-size: 3rem;
+    padding-bottom: 4rem;
+}
+
+.detail-modal .inner-detail-modal table tr td:first-child{
+    text-align: right;
+    width: 45%;
+    font-weight: bold;
+}
+
+.detail-modal .inner-detail-modal table tr td:last-child{
+    text-align: left;
+    width: 55%;
+}

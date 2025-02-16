@@ -10,6 +10,7 @@ import MetricLabel from "../MetricLabel/MetricLabel";
 import AppHeader from '../AppHeader/AppHeader';
 import Decorators from "../Decoratiors/Decorators";
 import SearchDataPoints from '../SearchDataPoints/SearchDataPoints';
+import DetailModal from "../DetailModal/DetailModal";
 const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
@@ -24,6 +25,7 @@ const ParticleChart = (props) => {
     const [labels, setLabels] = useState([]);
     const [mainLabelToggle, setMainLabelToggle] = useState(1);
     const [searchMarks, setSearchMarks] = useState([]);
+    const [activeDetail, setActiveDetail] = useState(null)
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
@@ -58,6 +60,9 @@ const ParticleChart = (props) => {
         return customSortablePaterns.map(item => item.name).includes(patern) || 
             sortablePaterns.includes(patern) ||
             singlePatterns.includes(patern);
+    }
+    const dataPointClickHandler = (data) => {
+        setActiveDetail(data);
     }
     const arrangePoints = () => {
         setMainLabelToggle(mainLabelToggle % 2 === 0 ? 1 : 2);
@@ -228,6 +233,7 @@ const ParticleChart = (props) => {
                             marked={searchMarks.includes(item.Name)}
                             x={item.x}
                             y={item.y}
+                            onDataPointClicked={() => dataPointClickHandler(item)}
                             signature={motionSignature}
                         />
                     ))}
@@ -251,6 +257,12 @@ const ParticleChart = (props) => {
                 filterables={filterables()}
                 onFiltered={filterHandler}
             />
+            {activeDetail && (
+                <DetailModal
+                    data={activeDetail}
+                    onDismiss={() => setActiveDetail(null)}
+                />
+            )}
         </div>
     )
 }
