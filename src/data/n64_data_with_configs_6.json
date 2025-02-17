@@ -1,8 +1,7 @@
 {
     "sortables": [
         "line",
-        "bar",
-        "name"
+        "bar"
     ],
     "singles": [
         "time",
@@ -58,6 +57,56 @@
                         }
                     ]
                 ]
+            },
+            {
+                "name": "plus",
+                "patern": [
+                    [
+                        {
+                            "x": 0.1,
+                            "y": 5
+                        },
+                        {
+                            "x": 0.9,
+                            "y": 5
+                        }
+                    ],
+                    [
+                        {
+                            "x": 5,
+                            "y": 0.1
+                        },
+                        {
+                            "x": 5,
+                            "y": 0.9
+                        }
+                    ]
+                ]
+            },
+            {
+                "name": "ex",
+                "patern": [
+                    [
+                        {
+                            "x": 0.1,
+                            "y": 0.1
+                        },
+                        {
+                            "x": 0.9,
+                            "y": 0.9
+                        }
+                    ],
+                    [
+                        {
+                            "x": 0.1,
+                            "y": 0.9
+                        },
+                        {
+                            "x": 0.9,
+                            "y": 0.1
+                        }
+                    ]
+                ]
             }
         ]
     },
@@ -69,28 +118,44 @@
 
     "sorters": [
         {
+            "label": "Year of Release",
             "name": "Year_of_Release",
             "patern": "time"
         },
         {
+            "label": "Genre",
             "name": "Genre",
             "patern": "line"
         },
         {
+            "label": "Genre",
             "name": "Genre",
             "patern": "diamond2"
         },
         {
+            "label": "Publisher",
             "name": "Publisher",
             "patern": "bar"
         },
         {
-            "name": "Name",
-            "patern": "name"
+            "label": "Sales NA to Global",
+            "name": "Sales NA to Global",
+            "patern": "scatter"
         },
         {
-            "name": "NA_Sales",
-            "patern": "scatter"
+            "intro": true,
+            "name": "Name1",
+            "patern": "diamond"
+        },
+        {
+            "intro": true,
+            "name": "Name2",
+            "patern": "plus"
+        },
+        {
+            "intro": true,
+            "name": "Name3",
+            "patern": "ex"
         }
     ],
 

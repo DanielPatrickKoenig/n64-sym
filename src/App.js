@@ -7,7 +7,7 @@ function App() {
 
   const loadData = async () => {
     try{
-      const response = await fetch('https://danielpatrickkoenig.github.io/shared-app-resources/n64_data_with_configs_4.json');
+      const response = await fetch('https://danielpatrickkoenig.github.io/shared-app-resources/n64_data_with_configs_6.json');
       const json = await response.json();
       console.log(json);
       setAppData(json);
