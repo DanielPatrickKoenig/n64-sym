@@ -20,7 +20,7 @@ const SorterMenu = (props) => {
     return (
         <ul className="sorters">
             <li class="heading"><h2>Sorters</h2></li>
-            {props.sorters.map((item, index) => (
+            {props.sorters.filter(item => item.label).map((item, index) => (
                 <li key={index}>
                     <button 
                         onClick={() => sorterButtonClicked(item)}
@@ -36,7 +36,7 @@ const SorterMenu = (props) => {
                             checked={selectedSorter === item.name}
                             onChange={onConfermableChange}
                         />
-                        {item.name}
+                        {item.label}
                     </label>
                 </li>
             ))}

@@ -17,15 +17,19 @@ const ParticleChart = (props) => {
     const valueMetrics = props.data.valueMetrics;
     const customSortablePaterns = props.data.custom.sortables;
     const customSinglePaterns = props.data.custom.singles;
+    const introSorters = props.data.sorters.filter(item => item.intro);
+    const nonIntroSorters = props.data.sorters.filter(item => item.label);
     const [activeFilters, setActiveFilters] = useState({});
-    const [sorter, setSorter] = useState('Publisher');
-    const [patern, setPatern] = useState('bar');
+    const [sorter, setSorter] = useState(introSorters[0].name);
+    const [patern, setPatern] = useState(introSorters[0].patern);
     const [positions, setPositions] = useState([]);
     const [motionSignature, setMotionSignature] = useState('empty');
     const [labels, setLabels] = useState([]);
     const [mainLabelToggle, setMainLabelToggle] = useState(1);
     const [searchMarks, setSearchMarks] = useState([]);
-    const [activeDetail, setActiveDetail] = useState(null)
+    const [activeDetail, setActiveDetail] = useState(null);
+    const [introStart, setIntroStarted] = useState(false);
+    const [endIntro, setEndIntro] = useState(false);
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
@@ -147,14 +151,6 @@ const ParticleChart = (props) => {
             console.log(shiftedPatern);
         }
         else if (customSortablePaterns.find(item => item?.name === patern)) {
-            // const cPatern = customSortablePaterns.find(item => item.name === patern).patern;
-            // const lowestY = flatten(cPatern).sort((a, b) => a.y - b.y)[0].y;
-            // const lowestX = flatten(cPatern).sort((a, b) => a.x - b.x)[0].x;
-            // const highestY = flatten(cPatern).sort((a, b) => b.y - a.y)[0].y;
-            // const highestX = flatten(cPatern).sort((a, b) => b.x - a.x)[0].x;
-            // const yDist = (highestY - lowestY) / 2;
-            // const xDist = (highestX - lowestX) / 2;
-            // const highestValue = [xDist, yDist].sort((a, b) => b - a)[0];
             let paternPosition = { x: 0, y: 0 };
             const groupedPoints = valuesOfSorter.map((value, vIndex) => {
                 const datsPoints = filteredData().filter(item => item[sorter] === value);
@@ -201,11 +197,29 @@ const ParticleChart = (props) => {
             // const indexedValues = valuesOfSorter.map((item, index) => ({ item, index, count: 0 }));
         }
     }
+    const runIntro = async () => {
+        const combinedSorters = [...introSorters, ...nonIntroSorters]
+        if (introSorters.length > 1) {
+            for(let i = 1; i < combinedSorters.length; i++){
+                await new Promise(resolve => setTimeout(resolve, 3500));
+                if (!endIntro) {
+                    setSorter(combinedSorters[i].name);
+                    setPatern(combinedSorters[i].patern);
+                }
+            }
+        }
+        setEndIntro(true);
+    }
     useEffect(() => {
         arrangePoints();
+        if(!introStart){
+            setIntroStarted(true);
+            runIntro();
+
+        }
     }, [sorter, patern, activeFilters]);
     return (
-        <div className="particle-chart">
+        <div className={`particle-chart ${endIntro ? 'intro-ended' : ''}`}>
             <AppHeader
                 filters={activeFilters}
                 sorter={sorter}
