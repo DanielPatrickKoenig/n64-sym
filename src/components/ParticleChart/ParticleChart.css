@@ -20,7 +20,8 @@
     width: 75%;
 }
 .outer-chart .chart-container.scatter{
-    box-shadow: .05rem -.05rem 0 #ffffff inset;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 .particle-chart .particle-chart-header{
     font-size: 3.5rem;
@@ -46,11 +47,12 @@
     top: 0;
     width: 33%;
     height: 100%;
-    border-left: .05rem solid rgba(255,255,255,.5);
-    border-right: .05rem solid rgba(255,255,255,.5);
+    border-left: 1px solid rgba(255,255,255,.5);
+    border-right: 1px solid rgba(255,255,255,.5);
     animation-name: fade-in-metric-label-1;
     animation-iteration-count: 1;
     animation-duration: 1s;
+    pointer-events: none;
 }
 .chart-container.scatter::after{
     position: absolute;
@@ -59,11 +61,12 @@
     left: 0;
     height: 33%;
     width: 100%;
-    border-top: .05rem solid rgba(255,255,255,.5);
-    border-bottom: .05rem solid rgba(255,255,255,.5);
+    border-top: 1px solid rgba(255,255,255,.5);
+    border-bottom: 1px solid rgba(255,255,255,.5);
     animation-name: fade-in-metric-label-1;
     animation-iteration-count: 1;
     animation-duration: 1s;
+    pointer-events: none;
 }
 @media screen and (min-width: 768px) {
     .particle-chart{

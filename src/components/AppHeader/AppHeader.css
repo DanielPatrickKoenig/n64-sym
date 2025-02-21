@@ -3,7 +3,8 @@
     justify-content: space-between;
     position: relative;
     height: 10rem;
-    background-color: #cc7c8c;
+    background-color: #000000;
+    border-bottom: 1px solid #66cf00;;
 }
 
 .app-header h1{
@@ -20,6 +21,7 @@
     background-color: transparent;
     border: none;
     color: #ffffff;
+    font-size: 2rem;
 }
 
 .app-header button .nav-icon{
@@ -28,10 +30,12 @@
     border: none;
     width: 4.5rem;
     display: block;
+    color: #66cf00;
+    
 }
 .app-header button .nav-icon path,
 .app-header button .nav-icon polygon{
-    color: #ffffff;
+    color: #66cf00;
 }
 
 .app-header button .filter-count{

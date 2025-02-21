@@ -44,6 +44,7 @@ button{
   height: 4.5rem;
   border-radius: 2.75rem;
   text-transform: uppercase;
+  color: #000000;
 }
 
 @keyframes fade-in-metric-label-1 {
