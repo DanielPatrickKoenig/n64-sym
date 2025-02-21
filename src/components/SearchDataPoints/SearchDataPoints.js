@@ -24,6 +24,7 @@ const SearchDataPoints = (props) => {
         <div className="search-data-points">
             <input
                 type="text"
+                placeholder="search"
                 className={`search-field ${showSearch ? '' : 'is-hiedden'}`}
                 onChange={onSearchChange}
             />
