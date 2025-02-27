@@ -4,6 +4,7 @@ const SorterMenu = (props) => {
     const [selectedSorter, setSelectedSorter] = useState('');
     const [selectedButton, setSelectedButton] = useState({});
     const sorterButtonClicked = (value) => {
+        console.log('sorter = ', value);
         setSelectedButton(value);
         props.onSelectSorter(value);
     }

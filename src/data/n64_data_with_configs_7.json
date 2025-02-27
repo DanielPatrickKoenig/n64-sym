@@ -120,7 +120,8 @@
         {
             "label": "Year of Release",
             "name": "Year_of_Release",
-            "patern": "time"
+            "patern": "time",
+            "metrics": ["Global_Sales"]
         },
         {
             "label": "Genre",
@@ -140,7 +141,8 @@
         {
             "label": "Sales NA to Global",
             "name": "Sales NA to Global",
-            "patern": "scatter"
+            "patern": "scatter",
+            "metrics": ["Global_Sales", "NA_Sales"]
         },
         {
             "intro": true,
