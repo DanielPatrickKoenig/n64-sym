@@ -14,11 +14,11 @@ import DetailModal from "../DetailModal/DetailModal";
 const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
-    const valueMetrics = props.data.valueMetrics;
     const customSortablePaterns = props.data.custom.sortables;
     const customSinglePaterns = props.data.custom.singles;
     const introSorters = props.data.sorters.filter(item => item.intro);
     const nonIntroSorters = props.data.sorters.filter(item => item.label);
+    const [valueMetrics, setValueMetrics] = useState(props.data.valueMetrics);
     const [activeFilters, setActiveFilters] = useState({});
     const [sorter, setSorter] = useState(introSorters[0].name);
     const [patern, setPatern] = useState(introSorters[0].patern);
@@ -33,6 +33,9 @@ const ParticleChart = (props) => {
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
+        if (item.metrics) {
+            setValueMetrics(item.metrics);
+        }
     }
     const filterables = () => {
         return props.data.filters.map(item => {
@@ -207,6 +210,9 @@ const ParticleChart = (props) => {
                 if (!endIntro) {
                     setSorter(combinedSorters[i].name);
                     setPatern(combinedSorters[i].patern);
+                    if (combinedSorters[i].metrics) {
+                        setValueMetrics(combinedSorters[i].metrics);
+                    }
                 }
             }
         }
