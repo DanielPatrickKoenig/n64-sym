@@ -80,6 +80,7 @@ const DataPoint = (props) => {
         className={`data-point ${props.marked ? 'marked' : ''}`}
         style={{left: `${xPos}%`, top: `${yPos}%`}}
         onClick={onPointClicked}
+        name={props.data.Name}
     />)
 };
 export default DataPoint;

@@ -166,23 +166,25 @@ const ParticleChart = (props) => {
                 console.log(highestX);
                 // paternPosition.x += highestX + 1;
                 paternPosition.y += highestY + 1;
-                return { points: datsPoints, patern: shiftedPatern, lowestY, lowestX, highestY, highestX };
+                return { points: datsPoints, patern: shiftedPatern, lowestY, lowestX, highestY, highestX, sorter: value };
             });
             let mergedPatren = [];
             let mergedPoints = [];
             console.log(groupedPoints);
             groupedPoints.forEach(item => {
                 // console.log(item.points);
+                console.log('groupedPoints map', item);
                 mergedPatren = [...mergedPatren, ...item.patern];
                 mergedPoints = [...mergedPoints, ...item.points];
                 // console.log(groupedPoints);
                 
             });
+            const groupedLabelsWithValues = groupedPoints.map(item => `${item.sorter} (${item.points.length})`)
             console.log(mergedPoints);
             console.log(mergedPatren);
             setPositions(mergedPoints.map((item, index, arr) => ({ ...item, ...plotToPaths(mergedPatren, (index === 0 ? .000000001 : index) / arr.length) })));
             
-            setLabels(valueLabelsWithGroups.map((item, index) => {
+            setLabels(groupedLabelsWithValues.map((item, index) => {
                 const sortedPaternX = flatten(groupedPoints[index].patern).sort((a, b) => a.x - b.x);
                 const sortedPaternY = flatten(groupedPoints[index].patern).sort((a, b) => a.y - b.y);
                 return ({ 
