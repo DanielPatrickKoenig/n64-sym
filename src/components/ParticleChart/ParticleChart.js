@@ -11,6 +11,7 @@ import AppHeader from '../AppHeader/AppHeader';
 import Decorators from "../Decoratiors/Decorators";
 import SearchDataPoints from '../SearchDataPoints/SearchDataPoints';
 import DetailModal from "../DetailModal/DetailModal";
+import MetricSelector from "../MetricSelector/MetricSelector";
 const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
@@ -30,11 +31,15 @@ const ParticleChart = (props) => {
     const [activeDetail, setActiveDetail] = useState(null);
     const [introStart, setIntroStarted] = useState(false);
     const [endIntro, setEndIntro] = useState(false);
+    const [metricIndex, setMetricIndex] = useState(0);
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
         if (item.metrics) {
             setValueMetrics(item.metrics);
+        }
+        else{
+            setValueMetrics([]);
         }
     }
     const filterables = () => {
@@ -104,7 +109,7 @@ const ParticleChart = (props) => {
         }
         else if (singlePatterns.includes(patern)) {
             if (patern === 'time') {
-                const lines = valueMetrics.map(metric => {
+                const lines = [valueMetrics[metricIndex]].map(metric => {
                     const sortedValues = valuesOfSorter.map(item => ({ item, number: Number(item) })).sort((a, b) => a.number - b.number);
                     // console.log(sortedValues);
                     const pointPrimatives = sortedValues.map((item, index) => {
@@ -127,7 +132,7 @@ const ParticleChart = (props) => {
                 setLabels(valuesOfSorter.map((item, index) => ({ name: item, x: lines[0][index].x, y: 100 })));
             }
             else if (patern === 'scatter') {
-                const [ xMetric, yMetric ] = valueMetrics;
+                const [ xMetric, yMetric ] = valueMetrics[metricIndex].join ? valueMetrics[metricIndex] : valueMetrics;
                 const lowestX = [...filteredData()].sort((a, b) => a[xMetric] - b[xMetric])[0][xMetric];
                 const lowestY = [...filteredData()].sort((a, b) => a[yMetric] - b[yMetric])[0][yMetric];
                 const highestX = [...filteredData()].sort((a, b) => b[xMetric] - a[xMetric])[0][xMetric] - lowestX;
@@ -137,7 +142,7 @@ const ParticleChart = (props) => {
                 const positions = filteredData().map(item => ({ ...item, x: ((item[xMetric] - lowestX) / highestX) * 100, y: 100 - (((item[yMetric] - lowestY) / highestY) * 100) }))
                 console.log(positions);
                 setPositions(positions);
-                setLabels(valueMetrics.map((item, index) => ({ name: item, x: index === 0 ? 50 : 0, y: index === 0 ? 100 : 50 })));
+                setLabels([xMetric, yMetric].map((item, index) => ({ name: item, x: index === 0 ? 50 : 0, y: index === 0 ? 100 : 50 })));
             }
         }
         else if (customSinglePaterns.find(item => item?.name === patern)) {
@@ -225,7 +230,7 @@ const ParticleChart = (props) => {
             runIntro();
 
         }
-    }, [sorter, patern, activeFilters]);
+    }, [sorter, patern, activeFilters, metricIndex]);
     return (
         <div className={`particle-chart ${endIntro ? 'intro-ended' : ''}`}>
             <AppHeader
@@ -283,6 +288,13 @@ const ParticleChart = (props) => {
                 <DetailModal
                     data={activeDetail}
                     onDismiss={() => setActiveDetail(null)}
+                />
+            )}
+            {valueMetrics?.length && (
+                <MetricSelector
+                    metrics={valueMetrics}
+                    onMetricSelected={(index) => setMetricIndex(index)}
+                    metricIndex={metricIndex}
                 />
             )}
         </div>

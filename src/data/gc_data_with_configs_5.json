@@ -57,39 +57,370 @@
                         }
                     ]
                 ]
+            },
+            {
+                "name": "plus",
+                "patern": [
+                    [
+                        {
+                            "x": 0.1,
+                            "y": 5
+                        },
+                        {
+                            "x": 0.9,
+                            "y": 5
+                        }
+                    ],
+                    [
+                        {
+                            "x": 5,
+                            "y": 0.1
+                        },
+                        {
+                            "x": 5,
+                            "y": 0.9
+                        }
+                    ]
+                ]
+            },
+            {
+                "name": "cube",
+                "patern": [
+                    [
+                      {
+                        "x": 339,
+                        "y": 274
+                      },
+                      {
+                        "x": 339,
+                        "y": 301
+                      },
+                      {
+                        "x": 251,
+                        "y": 353
+                      },
+                      {
+                        "x": 161,
+                        "y": 301
+                      },
+                      {
+                        "x": 161,
+                        "y": 198
+                      },
+                      {
+                        "x": 248,
+                        "y": 148
+                      },
+                      {
+                        "x": 335,
+                        "y": 200
+                      },
+                      {
+                        "x": 437,
+                        "y": 141
+                      },
+                      {
+                        "x": 437,
+                        "y": 358
+                      },
+                      {
+                        "x": 251,
+                        "y": 466
+                      },
+                      {
+                        "x": 61,
+                        "y": 357
+                      },
+                      {
+                        "x": 63,
+                        "y": 139
+                      },
+                      {
+                        "x": 251,
+                        "y": 34
+                      },
+                      {
+                        "x": 391,
+                        "y": 116
+                      },
+                      {
+                        "x": 334,
+                        "y": 153
+                      },
+                      {
+                        "x": 252,
+                        "y": 105
+                      },
+                      {
+                        "x": 126,
+                        "y": 179
+                      },
+                      {
+                        "x": 127,
+                        "y": 322
+                      },
+                      {
+                        "x": 253,
+                        "y": 392
+                      },
+                      {
+                        "x": 374,
+                        "y": 322
+                      },
+                      {
+                        "x": 373,
+                        "y": 255
+                      },
+                      {
+                        "x": 345,
+                        "y": 268
+                      }
+                    ],
+                    [
+                      {
+                        "x": 323,
+                        "y": 210
+                      },
+                      {
+                        "x": 291,
+                        "y": 230
+                      },
+                      {
+                        "x": 251,
+                        "y": 251
+                      },
+                      {
+                        "x": 177,
+                        "y": 209
+                      }
+                    ],
+                    [
+                      {
+                        "x": 251,
+                        "y": 339
+                      },
+                      {
+                        "x": 251,
+                        "y": 261
+                      }
+                    ],
+                    [
+                      {
+                        "x": 120,
+                        "y": 177
+                      },
+                      {
+                        "x": 68,
+                        "y": 146
+                      }
+                    ],
+                    [
+                      {
+                        "x": 251,
+                        "y": 457
+                      },
+                      {
+                        "x": 253,
+                        "y": 400
+                      }
+                    ]
+                ]
+            },
+            {
+                "name": "dollar",
+                "patern": [
+                    [
+                      {
+                        "x": 348,
+                        "y": 141
+                      },
+                      {
+                        "x": 344,
+                        "y": 113
+                      },
+                      {
+                        "x": 331,
+                        "y": 88
+                      },
+                      {
+                        "x": 306,
+                        "y": 69
+                      },
+                      {
+                        "x": 281,
+                        "y": 62
+                      },
+                      {
+                        "x": 255,
+                        "y": 61
+                      },
+                      {
+                        "x": 225,
+                        "y": 63
+                      },
+                      {
+                        "x": 195,
+                        "y": 70
+                      },
+                      {
+                        "x": 171,
+                        "y": 85
+                      },
+                      {
+                        "x": 157,
+                        "y": 109
+                      },
+                      {
+                        "x": 154,
+                        "y": 138
+                      },
+                      {
+                        "x": 157,
+                        "y": 164
+                      },
+                      {
+                        "x": 169,
+                        "y": 191
+                      },
+                      {
+                        "x": 194,
+                        "y": 211
+                      },
+                      {
+                        "x": 221,
+                        "y": 223
+                      },
+                      {
+                        "x": 251,
+                        "y": 232
+                      },
+                      {
+                        "x": 281,
+                        "y": 238
+                      },
+                      {
+                        "x": 309,
+                        "y": 247
+                      },
+                      {
+                        "x": 333,
+                        "y": 262
+                      },
+                      {
+                        "x": 354,
+                        "y": 293
+                      },
+                      {
+                        "x": 357,
+                        "y": 324
+                      },
+                      {
+                        "x": 354,
+                        "y": 355
+                      },
+                      {
+                        "x": 338,
+                        "y": 382
+                      },
+                      {
+                        "x": 313,
+                        "y": 400
+                      },
+                      {
+                        "x": 285,
+                        "y": 409
+                      },
+                      {
+                        "x": 255,
+                        "y": 411
+                      },
+                      {
+                        "x": 225,
+                        "y": 409
+                      },
+                      {
+                        "x": 195,
+                        "y": 404
+                      },
+                      {
+                        "x": 169,
+                        "y": 390
+                      },
+                      {
+                        "x": 154,
+                        "y": 362
+                      },
+                      {
+                        "x": 146,
+                        "y": 334
+                      },
+                      {
+                        "x": 146,
+                        "y": 310
+                      }
+                    ],
+                    [
+                      {
+                        "x": 250,
+                        "y": 19
+                      },
+                      {
+                        "x": 250,
+                        "y": 483
+                      }
+                    ]
+                ]
             }
         ]
     },
 
     "valueMetrics": [
-        "NA_Sales",
+        "Critic_Score",
         "Global_Sales"
     ],
 
     "sorters": [
         {
+            "label": "Over Time",
             "name": "Year_of_Release",
-            "patern": "time"
+            "patern": "time",
+            "metrics": ["Global_Sales", "Critic_Score", "User_Score"]
         },
         {
+            "label": "Genre",
             "name": "Genre",
             "patern": "line"
         },
         {
+            "label": "Genre",
             "name": "Genre",
             "patern": "diamond2"
         },
         {
+            "label": "Publisher",
             "name": "Publisher",
             "patern": "bar"
         },
         {
-            "name": "Name",
+            "label": "Sales NA to Global",
+            "name": "Sales NA to Global",
+            "patern": "scatter",
+            "metrics": [["Global_Sales", "Critic_Score"], ["User_Score", "Critic_Score"]]
+        },
+        {
+            "intro": true,
+            "name": "Name1",
             "patern": "diamond"
         },
         {
-            "name": "NA_Sales",
-            "patern": "scatter"
+            "intro": true,
+            "name": "Name2",
+            "patern": "dollar"
+        },
+        {
+            "intro": true,
+            "name": "Name3",
+            "patern": "cube"
         }
     ],
 
@@ -117,8 +448,8 @@
             "Publisher": "Nintendo",
             "NA_Sales": 4.12,
             "Global_Sales": 6.95,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 71,
+            "User_Score": "8.7"
         },
         {
             "Name": "Super Mario Sunshine",
@@ -397,8 +728,8 @@
             "Publisher": "Capcom",
             "NA_Sales": 0.63,
             "Global_Sales": 1.42,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 80,
+            "User_Score": "9.5"
         },
         {
             "Name": "LEGO Star Wars: The Video Game",
@@ -407,8 +738,8 @@
             "Publisher": "Eidos Interactive",
             "NA_Sales": 1.09,
             "Global_Sales": 1.41,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 81,
+            "User_Score": "8"
         },
         {
             "Name": "Donkey Kong Jungle Beat",
@@ -437,8 +768,8 @@
             "Publisher": "Capcom",
             "NA_Sales": 0.54,
             "Global_Sales": 1.29,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 94.0,
+            "User_Score": "8.2"
         },
         {
             "Name": "Sonic Adventure DX: Director's Cut",
@@ -517,8 +848,8 @@
             "Publisher": "Electronic Arts",
             "NA_Sales": 0.7,
             "Global_Sales": 1.14,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 91,
+            "User_Score": "8.2"
         },
         {
             "Name": "Tales of Symphonia",
@@ -567,8 +898,8 @@
             "Publisher": "Vivendi Games",
             "NA_Sales": 0.77,
             "Global_Sales": 0.99,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 78,
+            "User_Score": "8.6"
         },
         {
             "Name": "Shadow The Hedgehog",
@@ -747,8 +1078,8 @@
             "Publisher": "Konami Digital Entertainment",
             "NA_Sales": 0.49,
             "Global_Sales": 0.71,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 31,
+            "User_Score": "6.7"
         },
         {
             "Name": "Spyro: Enter the Dragonfly",
@@ -767,8 +1098,8 @@
             "Publisher": "Nintendo",
             "NA_Sales": 0.2,
             "Global_Sales": 0.71,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 70,
+            "User_Score": "7.8"
         },
         {
             "Name": "Tony Hawk's Underground",
@@ -788,7 +1119,7 @@
             "NA_Sales": 0.54,
             "Global_Sales": 0.7,
             "Critic_Score": 90.0,
-            "User_Score": "tbd"
+            "User_Score": "7.1"
         },
         {
             "Name": "Dragon Ball Z: Budokai",
@@ -838,7 +1169,7 @@
             "NA_Sales": 0.52,
             "Global_Sales": 0.66,
             "Critic_Score": 70.0,
-            "User_Score": "tbd"
+            "User_Score": "8"
         },
         {
             "Name": "The Sims: Bustin' Out",
@@ -868,7 +1199,7 @@
             "NA_Sales": 0.48,
             "Global_Sales": 0.63,
             "Critic_Score": 62.0,
-            "User_Score": "tbd"
+            "User_Score": "7.4"
         },
         {
             "Name": "Madden NFL 07",
@@ -897,8 +1228,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.48,
             "Global_Sales": 0.62,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 58,
+            "User_Score": "8"
         },
         {
             "Name": "Madden NFL 2002",
@@ -908,7 +1239,7 @@
             "NA_Sales": 0.47,
             "Global_Sales": 0.61,
             "Critic_Score": 89.0,
-            "User_Score": "tbd"
+            "User_Score": "9.4"
         },
         {
             "Name": "Wave Race: Blue Storm",
@@ -1002,7 +1333,7 @@
         },
         {
             "Name": "NBA Street Vol. 2",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2003,
             "Genre": "Sports",
             "Publisher": "Electronic Arts",
             "NA_Sales": 0.41,
@@ -1127,8 +1458,8 @@
             "Publisher": "Infogrames",
             "NA_Sales": 0.23,
             "Global_Sales": 0.45,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 85,
+            "User_Score": "7.8"
         },
         {
             "Name": "NBA Live 2005",
@@ -1157,8 +1488,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.34,
             "Global_Sales": 0.44,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 70,
+            "User_Score": "5.9"
         },
         {
             "Name": "Naruto: Gekito Ninja Taisen! 3",
@@ -1167,8 +1498,8 @@
             "Publisher": "Tomy Corporation",
             "NA_Sales": 0.0,
             "Global_Sales": 0.44,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 90,
+            "User_Score": "8.5"
         },
         {
             "Name": "Wario World",
@@ -1271,16 +1602,6 @@
             "User_Score": "6.3"
         },
         {
-            "Name": "Kumamon Bomber: Puzzle de Kumamon Taisou",
-            "Year_of_Release": 2005.0,
-            "Genre": "Puzzle",
-            "Publisher": "Sega",
-            "NA_Sales": 0.32,
-            "Global_Sales": 0.42,
-            "Critic_Score": -1,
-            "User_Score": -1
-        },
-        {
             "Name": "Mortal Kombat: Deadly Alliance",
             "Year_of_Release": 2002.0,
             "Genre": "Fighting",
@@ -1328,7 +1649,7 @@
             "NA_Sales": 0.31,
             "Global_Sales": 0.4,
             "Critic_Score": 49.0,
-            "User_Score": "tbd"
+            "User_Score": "7.0"
         },
         {
             "Name": "Rampage: Total Destruction",
@@ -1357,8 +1678,8 @@
             "Publisher": "Activision",
             "NA_Sales": 0.31,
             "Global_Sales": 0.4,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 84,
+            "User_Score": "4"
         },
         {
             "Name": "Call of Duty: Finest Hour",
@@ -1387,8 +1708,8 @@
             "Publisher": "Nintendo",
             "NA_Sales": 0.23,
             "Global_Sales": 0.39,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 80,
+            "User_Score": "7.5"
         },
         {
             "Name": "Turok: Evolution",
@@ -1497,8 +1818,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.27,
             "Global_Sales": 0.35,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 53,
+            "User_Score": "5.3"
         },
         {
             "Name": "Need for Speed Carbon",
@@ -1607,8 +1928,8 @@
             "Publisher": "Tomy Corporation",
             "NA_Sales": 0.0,
             "Global_Sales": 0.33,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 80,
+            "User_Score": "9"
         },
         {
             "Name": "MVP Baseball 2005",
@@ -1638,7 +1959,7 @@
             "NA_Sales": 0.25,
             "Global_Sales": 0.33,
             "Critic_Score": 76.0,
-            "User_Score": "tbd"
+            "User_Score": "6.4"
         },
         {
             "Name": "Prince of Persia: The Sands of Time",
@@ -1672,7 +1993,7 @@
         },
         {
             "Name": "NBA Live 2003",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2002,
             "Genre": "Sports",
             "Publisher": "Electronic Arts",
             "NA_Sales": 0.23,
@@ -1688,7 +2009,7 @@
             "NA_Sales": 0.23,
             "Global_Sales": 0.3,
             "Critic_Score": 69.0,
-            "User_Score": "tbd"
+            "User_Score": "5.1"
         },
         {
             "Name": "Scooby-Doo! Night of 100 Frights",
@@ -1697,8 +2018,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.23,
             "Global_Sales": 0.3,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 67,
+            "User_Score": "6.9"
         },
         {
             "Name": "NBA Street V3",
@@ -1709,16 +2030,6 @@
             "Global_Sales": 0.29,
             "Critic_Score": 88.0,
             "User_Score": "8.4"
-        },
-        {
-            "Name": "From TV Animation One Piece: Treasure Battle!",
-            "Year_of_Release": 2002.0,
-            "Genre": "Fighting",
-            "Publisher": "Namco Bandai Games",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.29,
-            "Critic_Score": -1,
-            "User_Score": -1
         },
         {
             "Name": "The Lord of the Rings: The Third Age",
@@ -1732,12 +2043,12 @@
         },
         {
             "Name": "Nicktoons: Battle for Volcano Island",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2006,
             "Genre": "Action",
             "Publisher": "Unknown",
             "NA_Sales": 0.22,
             "Global_Sales": 0.29,
-            "Critic_Score": -1,
+            "Critic_Score": 55,
             "User_Score": "7"
         },
         {
@@ -1762,13 +2073,13 @@
         },
         {
             "Name": "The Chronicles of Narnia: The Lion, The Witch and The Wardrobe",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2005,
             "Genre": "Action",
             "Publisher": "Disney Interactive Studios",
             "NA_Sales": 0.22,
             "Global_Sales": 0.28,
             "Critic_Score": 71.0,
-            "User_Score": "tbd"
+            "User_Score": "7.5"
         },
         {
             "Name": "The Adventures of Jimmy Neutron Boy Genius: Attack of the Twonkies",
@@ -1778,11 +2089,11 @@
             "NA_Sales": 0.22,
             "Global_Sales": 0.28,
             "Critic_Score": 65.0,
-            "User_Score": "tbd"
+            "User_Score": "8.8"
         },
         {
             "Name": "Pac-Man Fever",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2002,
             "Genre": "Misc",
             "Publisher": "Unknown",
             "NA_Sales": 0.21,
@@ -1797,8 +2108,8 @@
             "Publisher": "Nintendo",
             "NA_Sales": 0.0,
             "Global_Sales": 0.28,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 50,
+            "User_Score": "5.7"
         },
         {
             "Name": "Dave Mirra Freestyle BMX 2",
@@ -1838,7 +2149,7 @@
             "NA_Sales": 0.21,
             "Global_Sales": 0.27,
             "Critic_Score": 67.0,
-            "User_Score": "tbd"
+            "User_Score": "6"
         },
         {
             "Name": "Ty the Tasmanian Tiger",
@@ -1907,8 +2218,8 @@
             "Publisher": "Activision",
             "NA_Sales": 0.2,
             "Global_Sales": 0.26,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 68,
+            "User_Score": "7.2"
         },
         {
             "Name": "Backyard NFL Football",
@@ -1917,8 +2228,8 @@
             "Publisher": "Infogrames",
             "NA_Sales": 0.2,
             "Global_Sales": 0.26,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 69,
+            "User_Score": "5.8"
         },
         {
             "Name": "MVP Baseball 2004",
@@ -1947,7 +2258,7 @@
             "Publisher": "Midway Games",
             "NA_Sales": 0.2,
             "Global_Sales": 0.25,
-            "Critic_Score": -1,
+            "Critic_Score": 64,
             "User_Score": "8.6"
         },
         {
@@ -1997,8 +2308,8 @@
             "Publisher": "Atari",
             "NA_Sales": 0.19,
             "Global_Sales": 0.25,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 11,
+            "User_Score": "1.9"
         },
         {
             "Name": "X-Men Legends II: Rise of Apocalypse",
@@ -2098,7 +2409,7 @@
             "NA_Sales": 0.18,
             "Global_Sales": 0.23,
             "Critic_Score": 53.0,
-            "User_Score": "tbd"
+            "User_Score": "9.6"
         },
         {
             "Name": "Tiger Woods PGA Tour 2003",
@@ -2117,8 +2428,8 @@
             "Publisher": "Electronic Arts",
             "NA_Sales": 0.17,
             "Global_Sales": 0.22,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 87,
+            "User_Score": "8.3"
         },
         {
             "Name": "Mary-Kate and Ashley: Sweet 16 - Licenced to Drive",
@@ -2127,8 +2438,8 @@
             "Publisher": "Acclaim Entertainment",
             "NA_Sales": 0.17,
             "Global_Sales": 0.22,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 50,
+            "User_Score": "4.9"
         },
         {
             "Name": "Skies of Arcadia Legends",
@@ -2207,8 +2518,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.17,
             "Global_Sales": 0.22,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 68,
+            "User_Score": "5.5"
         },
         {
             "Name": "Shrek SuperSlam",
@@ -2228,7 +2539,7 @@
             "NA_Sales": 0.17,
             "Global_Sales": 0.21,
             "Critic_Score": 60.0,
-            "User_Score": "tbd"
+            "User_Score": "6.2"
         },
         {
             "Name": "Bratz: Forever Diamondz",
@@ -2237,8 +2548,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.17,
             "Global_Sales": 0.21,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 45,
+            "User_Score": "3"
         },
         {
             "Name": "Naruto: Clash of Ninja (JP sales)",
@@ -2247,8 +2558,8 @@
             "Publisher": "Tomy Corporation",
             "NA_Sales": 0.0,
             "Global_Sales": 0.21,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 72,
+            "User_Score": "6.9"
         },
         {
             "Name": "The Fairly OddParents: Breakin' Da Rules",
@@ -2257,8 +2568,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.16,
             "Global_Sales": 0.21,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 60,
+            "User_Score": "6"
         },
         {
             "Name": "Bionicle",
@@ -2317,8 +2628,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.16,
             "Global_Sales": 0.2,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 66,
+            "User_Score": "8.0"
         },
         {
             "Name": "From TV Animation One Piece: Grand Battle! 3",
@@ -2327,8 +2638,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.0,
             "Global_Sales": 0.2,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 70,
+            "User_Score": "6.9"
         },
         {
             "Name": "The Fairly Odd Parents: Shadow Showdown",
@@ -2337,8 +2648,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.16,
             "Global_Sales": 0.2,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 70,
+            "User_Score": "6.1"
         },
         {
             "Name": "Spy Hunter",
@@ -2348,7 +2659,7 @@
             "NA_Sales": 0.16,
             "Global_Sales": 0.2,
             "Critic_Score": 71.0,
-            "User_Score": "tbd"
+            "User_Score": "8.2"
         },
         {
             "Name": "Ty the Tasmanian Tiger 2: Bush Rescue",
@@ -2368,7 +2679,7 @@
             "NA_Sales": 0.15,
             "Global_Sales": 0.2,
             "Critic_Score": 77.0,
-            "User_Score": "tbd"
+            "User_Score": "7"
         },
         {
             "Name": "SpongeBob SquarePants: Revenge of the Flying Dutchman",
@@ -2408,7 +2719,7 @@
             "NA_Sales": 0.15,
             "Global_Sales": 0.19,
             "Critic_Score": 67.0,
-            "User_Score": "tbd"
+            "User_Score": "7.4"
         },
         {
             "Name": "Disney's Magical Mirror Starring Mickey Mouse",
@@ -2467,8 +2778,8 @@
             "Publisher": "Electronic Arts",
             "NA_Sales": 0.14,
             "Global_Sales": 0.18,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 68,
+            "User_Score": "7.3"
         },
         {
             "Name": "Gauntlet: Dark Legacy",
@@ -2527,7 +2838,7 @@
             "Publisher": "THQ",
             "NA_Sales": 0.13,
             "Global_Sales": 0.17,
-            "Critic_Score": -1,
+            "Critic_Score": 64,
             "User_Score": "6.7"
         },
         {
@@ -2538,7 +2849,7 @@
             "NA_Sales": 0.13,
             "Global_Sales": 0.17,
             "Critic_Score": 59.0,
-            "User_Score": "tbd"
+            "User_Score": "6.8"
         },
         {
             "Name": "Major League Baseball 2K6",
@@ -2548,7 +2859,7 @@
             "NA_Sales": 0.13,
             "Global_Sales": 0.17,
             "Critic_Score": 66.0,
-            "User_Score": "tbd"
+            "User_Score": "7"
         },
         {
             "Name": "The Grim Adventures of Billy and Mandy",
@@ -2557,8 +2868,8 @@
             "Publisher": "Midway Games",
             "NA_Sales": 0.13,
             "Global_Sales": 0.17,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 77,
+            "User_Score": "6"
         },
         {
             "Name": "The Hobbit",
@@ -2678,7 +2989,7 @@
             "NA_Sales": 0.13,
             "Global_Sales": 0.16,
             "Critic_Score": 74.0,
-            "User_Score": "tbd"
+            "User_Score": "6.7"
         },
         {
             "Name": "Hot Wheels World Race",
@@ -2718,7 +3029,7 @@
             "NA_Sales": 0.12,
             "Global_Sales": 0.16,
             "Critic_Score": 47.0,
-            "User_Score": "tbd"
+            "User_Score": "5.6"
         },
         {
             "Name": "Robots",
@@ -2728,7 +3039,7 @@
             "NA_Sales": 0.12,
             "Global_Sales": 0.16,
             "Critic_Score": 56.0,
-            "User_Score": "tbd"
+            "User_Score": "5.1"
         },
         {
             "Name": "Tiger Woods PGA Tour 2004",
@@ -2748,7 +3059,7 @@
             "NA_Sales": 0.12,
             "Global_Sales": 0.16,
             "Critic_Score": 84.0,
-            "User_Score": "tbd"
+            "User_Score": "8.9"
         },
         {
             "Name": "Burnout 2: Point of Impact",
@@ -2807,8 +3118,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.12,
             "Global_Sales": 0.15,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 71,
+            "User_Score": "6.1"
         },
         {
             "Name": "Army Men: Sarge's War",
@@ -2828,7 +3139,7 @@
             "NA_Sales": 0.12,
             "Global_Sales": 0.15,
             "Critic_Score": 61.0,
-            "User_Score": "tbd"
+            "User_Score": "5.9"
         },
         {
             "Name": "Zoids: Battle Legends",
@@ -2837,7 +3148,7 @@
             "Publisher": "Tomy Corporation",
             "NA_Sales": 0.12,
             "Global_Sales": 0.15,
-            "Critic_Score": -1,
+            "Critic_Score": 50,
             "User_Score": "8.1"
         },
         {
@@ -2897,8 +3208,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.11,
             "Global_Sales": 0.15,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 72,
+            "User_Score": "5.5"
         },
         {
             "Name": "Geist",
@@ -2977,8 +3288,8 @@
             "Publisher": "Nintendo",
             "NA_Sales": 0.0,
             "Global_Sales": 0.14,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 68,
+            "User_Score": "8"
         },
         {
             "Name": "FIFA Soccer 2005",
@@ -3028,7 +3339,7 @@
             "NA_Sales": 0.11,
             "Global_Sales": 0.14,
             "Critic_Score": 60.0,
-            "User_Score": "tbd"
+            "User_Score": "6.3"
         },
         {
             "Name": "NFL Blitz 20-03",
@@ -3038,7 +3349,7 @@
             "NA_Sales": 0.11,
             "Global_Sales": 0.14,
             "Critic_Score": 72.0,
-            "User_Score": "tbd"
+            "User_Score": "8.5"
         },
         {
             "Name": "Ultimate Muscle - The Kinnikuman Legacy: Legends vs New Generation",
@@ -3047,8 +3358,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.04,
             "Global_Sales": 0.14,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 77,
+            "User_Score": "8.7"
         },
         {
             "Name": "Rayman Arena",
@@ -3067,8 +3378,8 @@
             "Publisher": "Electronic Arts",
             "NA_Sales": 0.11,
             "Global_Sales": 0.14,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 87,
+            "User_Score": "9"
         },
         {
             "Name": "4x4 EVO 2",
@@ -3078,7 +3389,7 @@
             "NA_Sales": 0.11,
             "Global_Sales": 0.14,
             "Critic_Score": 56.0,
-            "User_Score": "tbd"
+            "User_Score": "7.4"
         },
         {
             "Name": "Tiger Woods PGA Tour 2005",
@@ -3088,7 +3399,7 @@
             "NA_Sales": 0.1,
             "Global_Sales": 0.14,
             "Critic_Score": 88.0,
-            "User_Score": "tbd"
+            "User_Score": "9"
         },
         {
             "Name": "NHL 2003",
@@ -3117,7 +3428,7 @@
             "Publisher": "Activision",
             "NA_Sales": 0.1,
             "Global_Sales": 0.13,
-            "Critic_Score": -1,
+            "Critic_Score": 50,
             "User_Score": "3.1"
         },
         {
@@ -3139,16 +3450,6 @@
             "Global_Sales": 0.13,
             "Critic_Score": 83.0,
             "User_Score": "5.5"
-        },
-        {
-            "Name": "Nintendo Puzzle Collection",
-            "Year_of_Release": -1,
-            "Genre": "Puzzle",
-            "Publisher": "Unknown",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.13,
-            "Critic_Score": -1,
-            "User_Score": -1
         },
         {
             "Name": "Backyard Baseball",
@@ -3177,8 +3478,8 @@
             "Publisher": "Infogrames",
             "NA_Sales": 0.1,
             "Global_Sales": 0.13,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 55,
+            "User_Score": "5.5"
         },
         {
             "Name": "Monopoly Party",
@@ -3187,8 +3488,8 @@
             "Publisher": "Infogrames",
             "NA_Sales": 0.1,
             "Global_Sales": 0.13,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 45,
+            "User_Score": "5"
         },
         {
             "Name": "X-Men: Next Dimension",
@@ -3237,8 +3538,8 @@
             "Publisher": "Electronic Arts",
             "NA_Sales": 0.1,
             "Global_Sales": 0.12,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 92,
+            "User_Score": "8.7"
         },
         {
             "Name": "The Ant Bully",
@@ -3248,7 +3549,7 @@
             "NA_Sales": 0.09,
             "Global_Sales": 0.12,
             "Critic_Score": 51.0,
-            "User_Score": "tbd"
+            "User_Score": "3.8"
         },
         {
             "Name": "X2: Wolverine's Revenge",
@@ -3262,7 +3563,7 @@
         },
         {
             "Name": "Street Hoops",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2002,
             "Genre": "Sports",
             "Publisher": "Unknown",
             "NA_Sales": 0.09,
@@ -3308,17 +3609,7 @@
             "NA_Sales": 0.09,
             "Global_Sales": 0.12,
             "Critic_Score": 59.0,
-            "User_Score": "tbd"
-        },
-        {
-            "Name": "Jikkyou Powerful Pro Yakyuu 9",
-            "Year_of_Release": 2002.0,
-            "Genre": "Sports",
-            "Publisher": "Konami Digital Entertainment",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.12,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "User_Score": "5.1"
         },
         {
             "Name": "Teenage Mutant Ninja Turtles 3: Mutant Nightmare",
@@ -3328,7 +3619,7 @@
             "NA_Sales": 0.09,
             "Global_Sales": 0.12,
             "Critic_Score": 57.0,
-            "User_Score": "tbd"
+            "User_Score": "7.4"
         },
         {
             "Name": "Dora the Explorer: Journey to the Purple Planet",
@@ -3337,8 +3628,8 @@
             "Publisher": "Global Star",
             "NA_Sales": 0.09,
             "Global_Sales": 0.12,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 70,
+            "User_Score": "7.1"
         },
         {
             "Name": "Barnyard",
@@ -3348,7 +3639,7 @@
             "NA_Sales": 0.09,
             "Global_Sales": 0.12,
             "Critic_Score": 66.0,
-            "User_Score": "tbd"
+            "User_Score": "8.2"
         },
         {
             "Name": "Die Hard: Vendetta",
@@ -3398,7 +3689,7 @@
             "NA_Sales": 0.09,
             "Global_Sales": 0.11,
             "Critic_Score": 66.0,
-            "User_Score": "tbd"
+            "User_Score": "7.1"
         },
         {
             "Name": "Capcom vs. SNK 2 EO",
@@ -3437,8 +3728,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.09,
             "Global_Sales": 0.11,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 55,
+            "User_Score": "6"
         },
         {
             "Name": "Odama",
@@ -3468,17 +3759,17 @@
             "NA_Sales": 0.08,
             "Global_Sales": 0.11,
             "Critic_Score": 49.0,
-            "User_Score": "tbd"
+            "User_Score": "5"
         },
         {
             "Name": "GiFTPiA",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2003,
             "Genre": "Role-Playing",
             "Publisher": "Unknown",
             "NA_Sales": 0.0,
             "Global_Sales": 0.11,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 78,
+            "User_Score": "7.2"
         },
         {
             "Name": "Defender",
@@ -3488,7 +3779,7 @@
             "NA_Sales": 0.08,
             "Global_Sales": 0.11,
             "Critic_Score": 66.0,
-            "User_Score": "tbd"
+            "User_Score": "7.3"
         },
         {
             "Name": "The Polar Express",
@@ -3507,8 +3798,8 @@
             "Publisher": "BAM! Entertainment",
             "NA_Sales": 0.08,
             "Global_Sales": 0.11,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 55,
+            "User_Score": "5.7"
         },
         {
             "Name": "Tiger Woods PGA Tour 06",
@@ -3529,16 +3820,6 @@
             "Global_Sales": 0.11,
             "Critic_Score": 54.0,
             "User_Score": "5.9"
-        },
-        {
-            "Name": "Jikkyou Powerful Pro Yakyuu 10",
-            "Year_of_Release": 2003.0,
-            "Genre": "Sports",
-            "Publisher": "Konami Digital Entertainment",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.1,
-            "Critic_Score": -1,
-            "User_Score": -1
         },
         {
             "Name": "Metal Arms: Glitch in the System",
@@ -3598,7 +3879,7 @@
             "NA_Sales": 0.08,
             "Global_Sales": 0.1,
             "Critic_Score": 53.0,
-            "User_Score": "tbd"
+            "User_Score": "6.3"
         },
         {
             "Name": "Disney's The Haunted Mansion",
@@ -3607,8 +3888,8 @@
             "Publisher": "Take-Two Interactive",
             "NA_Sales": 0.08,
             "Global_Sales": 0.1,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 60,
+            "User_Score": "4.8"
         },
         {
             "Name": "Beach Spikers: Virtua Beach Volleyball",
@@ -3631,24 +3912,14 @@
             "User_Score": "2.9"
         },
         {
-            "Name": "Jikkyou Powerful Pro Yakyuu 11",
-            "Year_of_Release": 2004.0,
-            "Genre": "Sports",
-            "Publisher": "Konami Digital Entertainment",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.1,
-            "Critic_Score": -1,
-            "User_Score": -1
-        },
-        {
             "Name": "SeaWorld Adventure Parks: Shamu's Deep Sea Adventure",
             "Year_of_Release": 2005.0,
             "Genre": "Adventure",
             "Publisher": "Activision",
             "NA_Sales": 0.07,
             "Global_Sales": 0.09,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 70,
+            "User_Score": "6.1"
         },
         {
             "Name": "Pac-Man World 3",
@@ -3668,7 +3939,7 @@
             "NA_Sales": 0.07,
             "Global_Sales": 0.09,
             "Critic_Score": 74.0,
-            "User_Score": "tbd"
+            "User_Score": "6.9"
         },
         {
             "Name": "Freekstyle",
@@ -3678,7 +3949,7 @@
             "NA_Sales": 0.07,
             "Global_Sales": 0.09,
             "Critic_Score": 78.0,
-            "User_Score": "tbd"
+            "User_Score": "8.1"
         },
         {
             "Name": "Alien Hominid",
@@ -3707,8 +3978,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.07,
             "Global_Sales": 0.09,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 82,
+            "User_Score": "7.6"
         },
         {
             "Name": "NASCAR: Dirt to Daytona",
@@ -3737,8 +4008,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.0,
             "Global_Sales": 0.09,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 54,
+            "User_Score": "6"
         },
         {
             "Name": "NFL Blitz 20-02",
@@ -3748,7 +4019,7 @@
             "NA_Sales": 0.07,
             "Global_Sales": 0.09,
             "Critic_Score": 77.0,
-            "User_Score": "tbd"
+            "User_Score": "7.6"
         },
         {
             "Name": "Ikaruga",
@@ -3781,16 +4052,6 @@
             "User_Score": "8"
         },
         {
-            "Name": "Bleach GC: Tasogare Ni Mamieru Shinigami",
-            "Year_of_Release": 2005.0,
-            "Genre": "Fighting",
-            "Publisher": "Sega",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.09,
-            "Critic_Score": -1,
-            "User_Score": -1
-        },
-        {
             "Name": "Jimmy Neutron: Boy Genius",
             "Year_of_Release": 2002.0,
             "Genre": "Platform",
@@ -3817,8 +4078,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.07,
             "Global_Sales": 0.08,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 70,
+            "User_Score": "6.2"
         },
         {
             "Name": "Bomberman Jetters",
@@ -3839,16 +4100,6 @@
             "Global_Sales": 0.08,
             "Critic_Score": 64.0,
             "User_Score": "6.8"
-        },
-        {
-            "Name": "Jikkyou Powerful Pro Yakyuu 12",
-            "Year_of_Release": 2005.0,
-            "Genre": "Sports",
-            "Publisher": "Konami Digital Entertainment",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.08,
-            "Critic_Score": -1,
-            "User_Score": -1
         },
         {
             "Name": "Pac-Man World Rally",
@@ -3908,7 +4159,7 @@
             "NA_Sales": 0.06,
             "Global_Sales": 0.08,
             "Critic_Score": 69.0,
-            "User_Score": "tbd"
+            "User_Score": "7.2"
         },
         {
             "Name": "Smuggler's Run: Warzones",
@@ -3957,8 +4208,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.06,
             "Global_Sales": 0.08,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 54,
+            "User_Score": "4.7"
         },
         {
             "Name": "Superman: Shadow of Apokolips",
@@ -4017,8 +4268,8 @@
             "Publisher": "Capcom",
             "NA_Sales": 0.06,
             "Global_Sales": 0.08,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 53,
+            "User_Score": "6.3"
         },
         {
             "Name": "Phantasy Star Online Episode III: C.A.R.D. Revolution",
@@ -4038,7 +4289,7 @@
             "NA_Sales": 0.06,
             "Global_Sales": 0.08,
             "Critic_Score": 67.0,
-            "User_Score": "tbd"
+            "User_Score": "7.5"
         },
         {
             "Name": "WWE Crush Hour",
@@ -4049,16 +4300,6 @@
             "Global_Sales": 0.08,
             "Critic_Score": 55.0,
             "User_Score": "7"
-        },
-        {
-            "Name": "Momotarou Dentetsu 11",
-            "Year_of_Release": 2002.0,
-            "Genre": "Misc",
-            "Publisher": "Hudson Soft",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.08,
-            "Critic_Score": -1,
-            "User_Score": -1
         },
         {
             "Name": "NHL Hitz 20-03",
@@ -4118,7 +4359,7 @@
             "NA_Sales": 0.06,
             "Global_Sales": 0.08,
             "Critic_Score": 67.0,
-            "User_Score": "tbd"
+            "User_Score": "6.6"
         },
         {
             "Name": "Conflict: Desert Storm",
@@ -4138,7 +4379,7 @@
             "NA_Sales": 0.06,
             "Global_Sales": 0.08,
             "Critic_Score": 55.0,
-            "User_Score": "tbd"
+            "User_Score": "8.5"
         },
         {
             "Name": "Gladius",
@@ -4152,7 +4393,7 @@
         },
         {
             "Name": "Smashing Drive",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2002,
             "Genre": "Racing",
             "Publisher": "Unknown",
             "NA_Sales": 0.06,
@@ -4167,18 +4408,8 @@
             "Publisher": "Ubisoft",
             "NA_Sales": 0.06,
             "Global_Sales": 0.07,
-            "Critic_Score": -1,
-            "User_Score": -1
-        },
-        {
-            "Name": "SD Gundam: Gashapon Wars",
-            "Year_of_Release": 2005.0,
-            "Genre": "Strategy",
-            "Publisher": "Namco Bandai Games",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.07,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 80,
+            "User_Score": "8.5"
         },
         {
             "Name": "TMNT: Mutant Melee",
@@ -4208,7 +4439,7 @@
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
             "Critic_Score": 70.0,
-            "User_Score": "tbd"
+            "User_Score": "7.9"
         },
         {
             "Name": "Karaoke Revolution Party",
@@ -4218,7 +4449,7 @@
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
             "Critic_Score": 80.0,
-            "User_Score": "tbd"
+            "User_Score": "7.8"
         },
         {
             "Name": "Wallace and Gromit in Project Zoo",
@@ -4227,8 +4458,8 @@
             "Publisher": "BAM! Entertainment",
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 74,
+            "User_Score": "6.7"
         },
         {
             "Name": "FIFA Soccer 2004",
@@ -4257,8 +4488,8 @@
             "Publisher": "Ubisoft",
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 70,
+            "User_Score": "5.9"
         },
         {
             "Name": "Catwoman",
@@ -4287,8 +4518,8 @@
             "Publisher": "NewKidCo",
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 65,
+            "User_Score": "6.3"
         },
         {
             "Name": "NHL 2005",
@@ -4308,7 +4539,7 @@
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
             "Critic_Score": 65.0,
-            "User_Score": "tbd"
+            "User_Score": "6.8"
         },
         {
             "Name": "The Powerpuff Girls: Relish Rampage",
@@ -4317,7 +4548,7 @@
             "Publisher": "BAM! Entertainment",
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
-            "Critic_Score": -1,
+            "Critic_Score": 72,
             "User_Score": "7.6"
         },
         {
@@ -4327,7 +4558,7 @@
             "Publisher": "Global Star",
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
-            "Critic_Score": -1,
+            "Critic_Score": 77,
             "User_Score": "8.5"
         },
         {
@@ -4357,7 +4588,7 @@
             "Publisher": "Activision",
             "NA_Sales": 0.05,
             "Global_Sales": 0.07,
-            "Critic_Score": -1,
+            "Critic_Score": 67,
             "User_Score": "8.8"
         },
         {
@@ -4377,8 +4608,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.05,
             "Global_Sales": 0.06,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 50,
+            "User_Score": "5.6"
         },
         {
             "Name": "BMX XXX",
@@ -4397,8 +4628,8 @@
             "Publisher": "TDK Mediactive",
             "NA_Sales": 0.05,
             "Global_Sales": 0.06,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 90,
+            "User_Score": "9"
         },
         {
             "Name": "Cel Damage",
@@ -4417,8 +4648,8 @@
             "Publisher": "Crave Entertainment",
             "NA_Sales": 0.05,
             "Global_Sales": 0.06,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 60,
+            "User_Score": "6.4"
         },
         {
             "Name": "Strike Force Bowling",
@@ -4428,7 +4659,7 @@
             "NA_Sales": 0.05,
             "Global_Sales": 0.06,
             "Critic_Score": 47.0,
-            "User_Score": "tbd"
+            "User_Score": "6"
         },
         {
             "Name": "Shonen Jump's One Piece: Grand Battle",
@@ -4437,8 +4668,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.05,
             "Global_Sales": 0.06,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 69,
+            "User_Score": "6.9"
         },
         {
             "Name": "Vexx",
@@ -4458,7 +4689,7 @@
             "NA_Sales": 0.05,
             "Global_Sales": 0.06,
             "Critic_Score": 63.0,
-            "User_Score": "tbd"
+            "User_Score": "6.8"
         },
         {
             "Name": "Disney Sports Skateboarding",
@@ -4478,7 +4709,7 @@
             "NA_Sales": 0.05,
             "Global_Sales": 0.06,
             "Critic_Score": 65.0,
-            "User_Score": "tbd"
+            "User_Score": "7.3"
         },
         {
             "Name": "Resident Evil - Code: Veronica X",
@@ -4498,7 +4729,7 @@
             "NA_Sales": 0.05,
             "Global_Sales": 0.06,
             "Critic_Score": 80.0,
-            "User_Score": "tbd"
+            "User_Score": "6.9"
         },
         {
             "Name": "Resident Evil 2",
@@ -4527,8 +4758,8 @@
             "Publisher": "Electronic Arts",
             "NA_Sales": 0.04,
             "Global_Sales": 0.06,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 80,
+            "User_Score": "7.7"
         },
         {
             "Name": "Lost Kingdoms II",
@@ -4568,7 +4799,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.06,
             "Critic_Score": 58.0,
-            "User_Score": "tbd"
+            "User_Score": "7.4"
         },
         {
             "Name": "Dance Dance Revolution: Mario Mix (JP sales)",
@@ -4577,8 +4808,8 @@
             "Publisher": "Nintendo",
             "NA_Sales": 0.0,
             "Global_Sales": 0.06,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 69,
+            "User_Score": "7.6"
         },
         {
             "Name": "Tom Clancy's Rainbow Six 3",
@@ -4607,8 +4838,8 @@
             "Publisher": "Sega",
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 85,
+            "User_Score": "7.8"
         },
         {
             "Name": "NFL Quarterback Club 2002",
@@ -4618,7 +4849,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 53.0,
-            "User_Score": "tbd"
+            "User_Score": "6.7"
         },
         {
             "Name": "Blood Omen 2",
@@ -4628,17 +4859,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 71.0,
-            "User_Score": "tbd"
-        },
-        {
-            "Name": "Shaman King: Soul Fight",
-            "Year_of_Release": 2003.0,
-            "Genre": "Platform",
-            "Publisher": "Namco Bandai Games",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.05,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "User_Score": "7.6"
         },
         {
             "Name": "Medabots: Infinity",
@@ -4668,7 +4889,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 46.0,
-            "User_Score": "tbd"
+            "User_Score": "7.0"
         },
         {
             "Name": "Piglet's Big Game",
@@ -4687,8 +4908,8 @@
             "Publisher": "Crave Entertainment",
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 80,
+            "User_Score": "7.3"
         },
         {
             "Name": "Disney's Party",
@@ -4718,7 +4939,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 49.0,
-            "User_Score": "tbd"
+            "User_Score": "6.2"
         },
         {
             "Name": "Second Sight",
@@ -4748,7 +4969,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 62.0,
-            "User_Score": "tbd"
+            "User_Score": "5"
         },
         {
             "Name": "Dark Summit",
@@ -4768,7 +4989,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 58.0,
-            "User_Score": "tbd"
+            "User_Score": "4.9"
         },
         {
             "Name": "Rogue Ops",
@@ -4778,7 +4999,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 65.0,
-            "User_Score": "tbd"
+            "User_Score": "7.9"
         },
         {
             "Name": "Whirl Tour",
@@ -4798,7 +5019,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 44.0,
-            "User_Score": "tbd"
+            "User_Score": "4.6"
         },
         {
             "Name": "American Chopper 2: Full Throttle",
@@ -4808,7 +5029,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 54.0,
-            "User_Score": "tbd"
+            "User_Score": "60"
         },
         {
             "Name": "2002 FIFA World Cup",
@@ -4828,7 +5049,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 60.0,
-            "User_Score": "tbd"
+            "User_Score": "7.5"
         },
         {
             "Name": "Summoner: A Goddess Reborn",
@@ -4838,7 +5059,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 72.0,
-            "User_Score": "tbd"
+            "User_Score": "7.3"
         },
         {
             "Name": "Frogger: Ancient Shadow",
@@ -4848,7 +5069,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 54.0,
-            "User_Score": "tbd"
+            "User_Score": "6.5"
         },
         {
             "Name": "Black and Bruised",
@@ -4857,8 +5078,8 @@
             "Publisher": "Vivendi Games",
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 42,
+            "User_Score": "6.6"
         },
         {
             "Name": "Tom Clancy's Rainbow Six: Lockdown",
@@ -4878,7 +5099,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 54.0,
-            "User_Score": "tbd"
+            "User_Score": "6.9"
         },
         {
             "Name": "Monster Jam: Maximum Destruction",
@@ -4887,8 +5108,8 @@
             "Publisher": "Ubisoft",
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 47,
+            "User_Score": "5.3"
         },
         {
             "Name": "Big Air Freestyle",
@@ -4898,7 +5119,7 @@
             "NA_Sales": 0.04,
             "Global_Sales": 0.05,
             "Critic_Score": 56.0,
-            "User_Score": "tbd"
+            "User_Score": "7.0"
         },
         {
             "Name": "Bad Boys: Miami Takedown",
@@ -4928,7 +5149,7 @@
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
             "Critic_Score": 68.0,
-            "User_Score": "tbd"
+            "User_Score": "7.1"
         },
         {
             "Name": "Conflict: Desert Storm II - Back to Bagdhad",
@@ -4937,8 +5158,8 @@
             "Publisher": "SCi",
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 79,
+            "User_Score": "6.7"
         },
         {
             "Name": "King Arthur",
@@ -4948,7 +5169,7 @@
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
             "Critic_Score": 60.0,
-            "User_Score": "tbd"
+            "User_Score": "8.3"
         },
         {
             "Name": "MLB SlugFest 20-04",
@@ -4958,7 +5179,7 @@
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
             "Critic_Score": 76.0,
-            "User_Score": "tbd"
+            "User_Score": "6.5"
         },
         {
             "Name": "Digimon Rumble Arena 2",
@@ -4978,11 +5199,11 @@
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
             "Critic_Score": 70.0,
-            "User_Score": "tbd"
+            "User_Score": "7.6"
         },
         {
             "Name": "NHL Hitz Pro",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2003,
             "Genre": "Sports",
             "Publisher": "Unknown",
             "NA_Sales": 0.03,
@@ -4997,8 +5218,8 @@
             "Publisher": "THQ",
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 74,
+            "User_Score": "6.2"
         },
         {
             "Name": "Zatch Bell! Mamodo Fury",
@@ -5007,8 +5228,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 30,
+            "User_Score": "4"
         },
         {
             "Name": "Shonen Jump's One Piece: Grand Adventure",
@@ -5017,18 +5238,8 @@
             "Publisher": "Namco Bandai Games",
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
-            "Critic_Score": -1,
-            "User_Score": -1
-        },
-        {
-            "Name": "Jikkyou Powerful Major League",
-            "Year_of_Release": 2006.0,
-            "Genre": "Sports",
-            "Publisher": "Konami Digital Entertainment",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.04,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 78,
+            "User_Score": "6.6"
         },
         {
             "Name": "Evolution Skateboarding",
@@ -5038,7 +5249,7 @@
             "NA_Sales": 0.03,
             "Global_Sales": 0.04,
             "Critic_Score": 44.0,
-            "User_Score": "tbd"
+            "User_Score": "7"
         },
         {
             "Name": "Scaler",
@@ -5057,8 +5268,8 @@
             "Publisher": "Activision",
             "NA_Sales": 0.03,
             "Global_Sales": 0.03,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 63,
+            "User_Score": "6.2"
         },
         {
             "Name": "SX Superstar",
@@ -5067,8 +5278,8 @@
             "Publisher": "Acclaim Entertainment",
             "NA_Sales": 0.03,
             "Global_Sales": 0.03,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 53,
+            "User_Score": "6.7"
         },
         {
             "Name": "Red Faction II",
@@ -5087,7 +5298,7 @@
             "Publisher": "Activision",
             "NA_Sales": 0.03,
             "Global_Sales": 0.03,
-            "Critic_Score": -1,
+            "Critic_Score": 70,
             "User_Score": "8.8"
         },
         {
@@ -5098,7 +5309,7 @@
             "NA_Sales": 0.03,
             "Global_Sales": 0.03,
             "Critic_Score": 56.0,
-            "User_Score": "tbd"
+            "User_Score": "6.6"
         },
         {
             "Name": "The Sum of All Fears",
@@ -5118,7 +5329,7 @@
             "NA_Sales": 0.03,
             "Global_Sales": 0.03,
             "Critic_Score": 75.0,
-            "User_Score": "tbd"
+            "User_Score": "8.3"
         },
         {
             "Name": "Disney's Hide and Sneak",
@@ -5127,8 +5338,8 @@
             "Publisher": "Capcom",
             "NA_Sales": 0.03,
             "Global_Sales": 0.03,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 48,
+            "User_Score": "4.3"
         },
         {
             "Name": "RoadKill",
@@ -5138,7 +5349,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.03,
             "Critic_Score": 64.0,
-            "User_Score": "tbd"
+            "User_Score": "7.1"
         },
         {
             "Name": "F1 2002",
@@ -5158,7 +5369,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.03,
             "Critic_Score": 63.0,
-            "User_Score": "tbd"
+            "User_Score": "7"
         },
         {
             "Name": "Go! Go! Hypergrind",
@@ -5167,8 +5378,8 @@
             "Publisher": "Atlus",
             "NA_Sales": 0.02,
             "Global_Sales": 0.03,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 69,
+            "User_Score": "6.7"
         },
         {
             "Name": "Drome Racers",
@@ -5187,8 +5398,8 @@
             "Publisher": "Midway Games",
             "NA_Sales": 0.02,
             "Global_Sales": 0.03,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 73,
+            "User_Score": "6.4"
         },
         {
             "Name": "Animaniacs: The Great Edgar Hunt",
@@ -5198,7 +5409,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.03,
             "Critic_Score": 65.0,
-            "User_Score": "tbd"
+            "User_Score": "6.8"
         },
         {
             "Name": "Dakar 2: The World's Ultimate Rally",
@@ -5207,8 +5418,8 @@
             "Publisher": "Acclaim Entertainment",
             "NA_Sales": 0.02,
             "Global_Sales": 0.03,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 62,
+            "User_Score": "7"
         },
         {
             "Name": "Auto Modellista",
@@ -5218,7 +5429,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.03,
             "Critic_Score": 62.0,
-            "User_Score": "tbd"
+            "User_Score": "7.4"
         },
         {
             "Name": "Gotcha Force",
@@ -5247,8 +5458,8 @@
             "Publisher": "Ignition Entertainment",
             "NA_Sales": 0.02,
             "Global_Sales": 0.03,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 73,
+            "User_Score": "7.1"
         },
         {
             "Name": "ZooCube",
@@ -5262,33 +5473,13 @@
         },
         {
             "Name": "Tube Slider",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2003,
             "Genre": "Racing",
             "Publisher": "Unknown",
             "NA_Sales": 0.02,
             "Global_Sales": 0.02,
             "Critic_Score": 62.0,
-            "User_Score": "tbd"
-        },
-        {
-            "Name": "Jikkyou Powerful Pro Yakyuu 12 Ketteiban",
-            "Year_of_Release": 2005.0,
-            "Genre": "Sports",
-            "Publisher": "Konami Digital Entertainment",
-            "NA_Sales": 0.0,
-            "Global_Sales": 0.02,
-            "Critic_Score": -1,
-            "User_Score": -1
-        },
-        {
-            "Name": "Road Trip: The Arcade Edition",
-            "Year_of_Release": 2002.0,
-            "Genre": "Racing",
-            "Publisher": "Zoo Digital Publishing",
-            "NA_Sales": 0.02,
-            "Global_Sales": 0.02,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "User_Score": "7.7"
         },
         {
             "Name": "Future Tactics: The Uprising",
@@ -5298,7 +5489,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.02,
             "Critic_Score": 63.0,
-            "User_Score": "tbd"
+            "User_Score": "6.1"
         },
         {
             "Name": "RedCard 20-03",
@@ -5318,7 +5509,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.02,
             "Critic_Score": 71.0,
-            "User_Score": "tbd"
+            "User_Score": "7.3"
         },
         {
             "Name": "Muppets Party Cruise",
@@ -5327,7 +5518,7 @@
             "Publisher": "TDK Mediactive",
             "NA_Sales": 0.02,
             "Global_Sales": 0.02,
-            "Critic_Score": -1,
+            "Critic_Score": 81,
             "User_Score": "8"
         },
         {
@@ -5348,7 +5539,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.02,
             "Critic_Score": 57.0,
-            "User_Score": "tbd"
+            "User_Score": "7"
         },
         {
             "Name": "Terminator 3: The Redemption",
@@ -5358,7 +5549,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.02,
             "Critic_Score": 68.0,
-            "User_Score": "tbd"
+            "User_Score": "6.6"
         },
         {
             "Name": "XGRA: Extreme G Racing Association",
@@ -5377,8 +5568,8 @@
             "Publisher": "TDK Mediactive",
             "NA_Sales": 0.02,
             "Global_Sales": 0.02,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 55,
+            "User_Score": "5.8"
         },
         {
             "Name": "ESPN MLS ExtraTime 2002",
@@ -5388,7 +5579,7 @@
             "NA_Sales": 0.02,
             "Global_Sales": 0.02,
             "Critic_Score": 68.0,
-            "User_Score": "tbd"
+            "User_Score": "8.7"
         },
         {
             "Name": "Speed Kings",
@@ -5398,7 +5589,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
             "Critic_Score": 59.0,
-            "User_Score": "tbd"
+            "User_Score": "7"
         },
         {
             "Name": "Charlie's Angels",
@@ -5428,7 +5619,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
             "Critic_Score": 59.0,
-            "User_Score": "tbd"
+            "User_Score": "5.1"
         },
         {
             "Name": "Freestyle Metal X",
@@ -5437,8 +5628,8 @@
             "Publisher": "Midway Games",
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 67,
+            "User_Score": "8"
         },
         {
             "Name": "Spirits and Spells",
@@ -5447,8 +5638,8 @@
             "Publisher": "Wanadoo",
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 50,
+            "User_Score": "5"
         },
         {
             "Name": "Goblin Commander: Unleash the Horde",
@@ -5468,7 +5659,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
             "Critic_Score": 64.0,
-            "User_Score": "tbd"
+            "User_Score": "8.3"
         },
         {
             "Name": "Samurai Jack: The Shadow of Aku",
@@ -5478,7 +5669,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
             "Critic_Score": 59.0,
-            "User_Score": "tbd"
+            "User_Score": "7.5"
         },
         {
             "Name": "Kao the Kangaroo Round 2",
@@ -5488,17 +5679,17 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
             "Critic_Score": 57.0,
-            "User_Score": "tbd"
+            "User_Score": "7.7"
         },
         {
             "Name": "Dinotopia: The Sunstone Odyssey",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2003,
             "Genre": "Action",
             "Publisher": "Unknown",
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
             "Critic_Score": 50.0,
-            "User_Score": "tbd"
+            "User_Score": "4.4"
         },
         {
             "Name": "Mission: Impossible - Operation Surma",
@@ -5508,7 +5699,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
             "Critic_Score": 64.0,
-            "User_Score": "tbd"
+            "User_Score": "8"
         },
         {
             "Name": "Trigger Man",
@@ -5517,8 +5708,8 @@
             "Publisher": "Crave Entertainment",
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 31,
+            "User_Score": "4.2"
         },
         {
             "Name": "Lotus Challenge",
@@ -5527,8 +5718,8 @@
             "Publisher": "Ignition Entertainment",
             "NA_Sales": 0.01,
             "Global_Sales": 0.02,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 61,
+            "User_Score": "6.1"
         },
         {
             "Name": "Puyo Pop Fever",
@@ -5538,7 +5729,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.01,
             "Critic_Score": 72.0,
-            "User_Score": "tbd"
+            "User_Score": "8.4"
         },
         {
             "Name": "Aquaman: Battle for Atlantis",
@@ -5557,12 +5748,12 @@
             "Publisher": "Ubisoft",
             "NA_Sales": 0.01,
             "Global_Sales": 0.01,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 67,
+            "User_Score": "7.9"
         },
         {
             "Name": "Freaky Flyers",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2003,
             "Genre": "Racing",
             "Publisher": "Unknown",
             "NA_Sales": 0.01,
@@ -5577,8 +5768,8 @@
             "Publisher": "3DO",
             "NA_Sales": 0.01,
             "Global_Sales": 0.01,
-            "Critic_Score": -1,
-            "User_Score": -1
+            "Critic_Score": 75,
+            "User_Score": "8.2"
         },
         {
             "Name": "Rally Championship",
@@ -5588,7 +5779,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.01,
             "Critic_Score": 63.0,
-            "User_Score": "tbd"
+            "User_Score": "7"
         },
         {
             "Name": "Grooverider: Slot Car Thunder",
@@ -5598,7 +5789,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.01,
             "Critic_Score": 49.0,
-            "User_Score": "tbd"
+            "User_Score": "4.5"
         },
         {
             "Name": "Darkened Skye",
@@ -5612,7 +5803,7 @@
         },
         {
             "Name": "Virtua Quest",
-            "Year_of_Release": -1,
+            "Year_of_Release": 2004,
             "Genre": "Role-Playing",
             "Publisher": "Unknown",
             "NA_Sales": 0.01,
@@ -5638,7 +5829,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.01,
             "Critic_Score": 40.0,
-            "User_Score": "tbd"
+            "User_Score": "6.8"
         },
         {
             "Name": "Bust-A-Move 3000",
@@ -5648,7 +5839,7 @@
             "NA_Sales": 0.01,
             "Global_Sales": 0.01,
             "Critic_Score": 53.0,
-            "User_Score": "tbd"
+            "User_Score": "6.5"
         },
         {
             "Name": "Men in Black II: Alien Escape",
@@ -5657,8 +5848,8 @@
             "Publisher": "Infogrames",
             "NA_Sales": 0.01,
             "Global_Sales": 0.01,
-            "Critic_Score": -1,
-            "User_Score": "tbd"
+            "Critic_Score": 50,
+            "User_Score": "5"
         }
     ]
 }
