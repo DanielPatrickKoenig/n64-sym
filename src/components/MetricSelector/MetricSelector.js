@@ -11,7 +11,7 @@ const MetricSelector = (props) => {
                     key={index}
                     onClick={() => metricSelected(index)}
                 >
-                    {item.join ? item.join(' / ') : item}
+                    {item.join ? item.map(lbl => lbl.split('_').join(' ')).join(' / ') : item.split('_').join(' ')}
                 </button>
             ))}
         </div>

@@ -4,6 +4,7 @@
     animation-name: fade-in-metric-label-1;
     animation-iteration-count: 1;
     animation-duration: 1s;
+    transition: transform, .5s;
 }
 .metric-label-1{
     animation-name: fade-in-metric-label-1;
@@ -17,7 +18,8 @@
 }
 .metric-label label{
     display: block;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    transition: font-size, .5s;
     
 }
 .metric-label.line,
@@ -29,6 +31,10 @@
 
 .metric-label.bar{
     transform: translate(-100%, -50%);
+}
+
+.metric-label.bar label{
+    font-size: 1.4rem;
 }
 
 .metric-label.scatter{
@@ -57,7 +63,10 @@
     }
     .metric-label label{
         display: block;
-        font-size: 1rem;
+        font-size: 2rem;
         
+    }
+    .metric-label.bar label{
+        font-size: 1rem;
     }
 }

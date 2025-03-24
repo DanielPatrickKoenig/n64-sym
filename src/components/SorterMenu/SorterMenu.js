@@ -4,7 +4,6 @@ const SorterMenu = (props) => {
     const [selectedSorter, setSelectedSorter] = useState('');
     const [selectedButton, setSelectedButton] = useState({});
     const sorterButtonClicked = (value) => {
-        console.log('sorter = ', value);
         setSelectedButton(value);
         props.onSelectSorter(value);
     }
@@ -27,7 +26,7 @@ const SorterMenu = (props) => {
                         onClick={() => sorterButtonClicked(item)}
                         className={`sorter-btn ${item === selectedButton ? 'sorter-btn-selected' : ''}`}
                     >
-                        {item.name}
+                        {item.label}
                     </button>
                     <label>
                         <input

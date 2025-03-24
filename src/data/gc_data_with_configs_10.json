@@ -11,78 +11,58 @@
     "custom": {
         "sortables": [
             {
-                "name": "diamond2",
+                "name": "star",
                 "patern": [
                     [
-                        {
-                            "x": 5,
-                            "y": 0
-                        },
-                        {
-                            "x": 7.5,
-                            "y": 5
-                        },
-                        {
-                            "x": 5,
-                            "y": 10
-                        },
-                        {
-                            "x": 2.5,
-                            "y": 5
-                        }
+                      {
+                        "x": 252,
+                        "y": 75
+                      },
+                      {
+                        "x": 298,
+                        "y": 204
+                      },
+                      {
+                        "x": 440,
+                        "y": 207
+                      },
+                      {
+                        "x": 325,
+                        "y": 289
+                      },
+                      {
+                        "x": 368,
+                        "y": 426
+                      },
+                      {
+                        "x": 250,
+                        "y": 344
+                      },
+                      {
+                        "x": 135,
+                        "y": 429
+                      },
+                      {
+                        "x": 179,
+                        "y": 289
+                      },
+                      {
+                        "x": 65,
+                        "y": 207
+                      },
+                      {
+                        "x": 208,
+                        "y": 204
+                      },
+                      {
+                        "x": 251,
+                        "y": 76
+                      }
                     ]
                 ]
             }
         ],
         "singles": [
-            {
-                "name": "diamond",
-                "patern": [
-                    [
-                        {
-                            "x": 5,
-                            "y": 0
-                        },
-                        {
-                            "x": 7.5,
-                            "y": 5
-                        },
-                        {
-                            "x": 5,
-                            "y": 10
-                        },
-                        {
-                            "x": 2.5,
-                            "y": 5
-                        }
-                    ]
-                ]
-            },
-            {
-                "name": "plus",
-                "patern": [
-                    [
-                        {
-                            "x": 0.1,
-                            "y": 5
-                        },
-                        {
-                            "x": 0.9,
-                            "y": 5
-                        }
-                    ],
-                    [
-                        {
-                            "x": 5,
-                            "y": 0.1
-                        },
-                        {
-                            "x": 5,
-                            "y": 0.9
-                        }
-                    ]
-                ]
-            },
             {
                 "name": "cube",
                 "patern": [
@@ -384,9 +364,9 @@
             "patern": "line"
         },
         {
-            "label": "Rounded_Critic_Score",
+            "label": "Rating",
             "name": "Rounded_Critic_Score",
-            "patern": "diamond2"
+            "patern": "star"
         },
         {
             "label": "Publisher",
@@ -404,6 +384,9 @@
             "metrics": [
                 "Global_Sales",
                 "Critic_Score"
+            ],
+            "suspendFilters": [
+                "Year_of_Release"
             ]
         },
         {
