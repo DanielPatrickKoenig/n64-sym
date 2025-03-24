@@ -11,7 +11,7 @@ const MetricSelector = (props) => {
                     key={index}
                     onClick={() => metricSelected(index)}
                 >
-                    {item.join ? item.join(' ') : item}
+                    {item.join ? item.join(' / ') : item}
                 </button>
             ))}
         </div>

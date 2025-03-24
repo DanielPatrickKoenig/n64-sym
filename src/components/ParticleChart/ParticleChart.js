@@ -32,6 +32,7 @@ const ParticleChart = (props) => {
     const [introStart, setIntroStarted] = useState(false);
     const [endIntro, setEndIntro] = useState(false);
     const [metricIndex, setMetricIndex] = useState(0);
+    const [metricFormulas, setMetricFormulas] = useState([]);
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
@@ -40,6 +41,12 @@ const ParticleChart = (props) => {
         }
         else{
             setValueMetrics([]);
+        }
+        if (item.metricFormulas) {
+            setMetricFormulas(item.metricFormulas);
+        }
+        else {
+            setMetricFormulas([]);
         }
     }
     const filterables = () => {
@@ -79,6 +86,10 @@ const ParticleChart = (props) => {
     const arrangePoints = () => {
         setMainLabelToggle(mainLabelToggle % 2 === 0 ? 1 : 2);
         setMotionSignature(generateID());
+        let currentMetricFormula = 'sum';
+        if (metricFormulas && metricFormulas[metricIndex]) {
+            currentMetricFormula = metricFormulas[metricIndex];
+        }
         const valuesOfSorter = uniq(filteredData().map(item => item[sorter]));
         const valueLabelsWithGroups = valuesOfSorter.map(value => `${value} (${filteredData().filter(item => item[sorter] === value).length})`)
         // setLabels(valuesOfSorter);
@@ -113,8 +124,18 @@ const ParticleChart = (props) => {
                     const sortedValues = valuesOfSorter.map(item => ({ item, number: Number(item) })).sort((a, b) => a.number - b.number);
                     // console.log(sortedValues);
                     const pointPrimatives = sortedValues.map((item, index) => {
+                        console.log('point primative value', filteredData().filter(_item => item.item === _item[sorter]));
                         const x = index;
-                        const y = filteredData().filter(_item => item.item === _item[sorter]).reduce((t, _item) => _item[metric] + t, 0);
+                        const calculateY = (fData, currentMetric, formula) => {
+                            const processedDada = fData.filter(_item => item.item === _item[sorter]);
+                            const rawY = processedDada.reduce((t, _item) => _item[currentMetric] + t, 0);
+                            let output = rawY;
+                            if (formula === 'average') {
+                                output = rawY / processedDada.length;
+                            }
+                            return output;
+                        }
+                        const y = calculateY(filteredData(), metric, currentMetricFormula);
                         // console.log(y);
                         return { x, y };
                     });
