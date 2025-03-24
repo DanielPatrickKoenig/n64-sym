@@ -10,13 +10,12 @@ const AppHeader = (props) => {
         return Object.keys(props.filters).map(item => props.filters[item].length).reduce((t, item) => item + t, 0);
     }
     useEffect(() => {
-        console.log('CHANGE');
         setShowSorters(false);
         setShowFilters(false);
     },[props.filter, props.sorter, props.count]);
     return (
         <header className={`app-header ${showFilters ? 'show-filters' : ''} ${showSorters ? 'show-sorters' : ''}`}>
-            <h1>Particle Chart</h1>
+            <h1>Gamecube Data</h1>
             <button onClick={() => { setShowSorters(!showSorters); setShowFilters(false); }}>
                 <MetricsIcon />
                 <span>METRICS</span>

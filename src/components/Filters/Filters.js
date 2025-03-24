@@ -33,7 +33,7 @@ const Filters = (props) => {
                         className="filter-section-toggle"
                         onClick={() => {toggleSection(valueIndex)}}
                     >
-                        {item.name}
+                        {item.name.split('_').join(' ')}
                     </a>
                     <div style={{ display: expandStates[valueIndex].open ? 'block' : 'none' }}>
                         <Checkboxes

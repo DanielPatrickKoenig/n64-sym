@@ -124,7 +124,6 @@ const ParticleChart = (props) => {
                     const sortedValues = valuesOfSorter.map(item => ({ item, number: Number(item) })).sort((a, b) => a.number - b.number);
                     // console.log(sortedValues);
                     const pointPrimatives = sortedValues.map((item, index) => {
-                        console.log('point primative value', filteredData().filter(_item => item.item === _item[sorter]));
                         const x = index;
                         const calculateY = (fData, currentMetric, formula) => {
                             const processedDada = fData.filter(_item => item.item === _item[sorter]);
@@ -158,12 +157,9 @@ const ParticleChart = (props) => {
                 const lowestY = [...filteredData()].sort((a, b) => a[yMetric] - b[yMetric])[0][yMetric];
                 const highestX = [...filteredData()].sort((a, b) => b[xMetric] - a[xMetric])[0][xMetric] - lowestX;
                 const highestY = [...filteredData()].sort((a, b) => b[yMetric] - a[yMetric])[0][yMetric] - lowestY;
-                console.log(lowestX, lowestY);
-                console.log(highestX, highestY);
                 const positions = filteredData().map(item => ({ ...item, x: ((item[xMetric] - lowestX) / highestX) * 100, y: 100 - (((item[yMetric] - lowestY) / highestY) * 100) }))
-                console.log(positions);
                 setPositions(positions);
-                setLabels([xMetric, yMetric].map((item, index) => ({ name: item, x: index === 0 ? 50 : 0, y: index === 0 ? 100 : 50 })));
+                setLabels([xMetric, yMetric].map((item, index) => ({ name: item.split('_').join(' '), x: index === 0 ? 50 : 0, y: index === 0 ? 100 : 50 })));
             }
         }
         else if (customSinglePaterns.find(item => item?.name === patern)) {
@@ -184,7 +180,8 @@ const ParticleChart = (props) => {
             const groupedPoints = valuesOfSorter.map((value, vIndex) => {
                 const datsPoints = filteredData().filter(item => item[sorter] === value);
                 const sizeRatio = datsPoints.length / filteredData().length;
-                const scaledPatern = customSortablePaterns.find(item => item.name === patern).patern.map(item => item.map(_item => ({ x: (_item.x * sizeRatio * 8.25), y: (_item.y * sizeRatio * 8.25) })));
+                const scaledPatern = customSortablePaterns.find(item => item.name === patern).patern.map(item => item.map(_item => ({ x: ((_item.x * sizeRatio) / 5), y: ((_item.y * sizeRatio) / 5) })));
+                console.log('patern', scaledPatern);
                 const flattenedPattern = uniq(scaledPatern);
                 const lowestY = flatten(flattenedPattern).sort((a, b) => a.y - b.y)[0].y;
                 const lowestX = flatten(flattenedPattern).sort((a, b) => a.x - b.x)[0].x;
@@ -192,7 +189,7 @@ const ParticleChart = (props) => {
                 const highestX = flatten(flattenedPattern).sort((a, b) => b.x - a.x)[0].x;
                 const xDist = (highestX - lowestX) / 2;
                 const shiftedPatern = scaledPatern.map(item => item.map(_item => ({ ...item, x: (_item.x - (xDist + lowestX)) + paternPosition.x + 50 + (vIndex % 2 === 0 ? (highestX / 2) + 2 : ((highestX / 2) + 2) * -1), y: _item.y + paternPosition.y })))
-                console.log(highestX);
+                console.log('shifted patern', shiftedPatern);
                 // paternPosition.x += highestX + 1;
                 paternPosition.y += highestY + 1;
                 return { points: datsPoints, patern: shiftedPatern, lowestY, lowestX, highestY, highestX, sorter: value };
