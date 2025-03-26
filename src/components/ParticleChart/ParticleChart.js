@@ -33,6 +33,7 @@ const ParticleChart = (props) => {
     const [endIntro, setEndIntro] = useState(false);
     const [metricIndex, setMetricIndex] = useState(0);
     const [metricFormulas, setMetricFormulas] = useState([]);
+    const [resetIndex, setResetIndex] = useState(1);
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
@@ -57,9 +58,14 @@ const ParticleChart = (props) => {
             }
         });
     }
+    const filterCount = () => {
+        return Object.keys(activeFilters).map(item => activeFilters[item].length).reduce((t, item) => item + t, 0);
+    }
+
     const filterHandler = ({ name, values }) => {
         const tempFilters = { ...activeFilters };
         tempFilters[name] = values;
+        console.log(tempFilters);
         setActiveFilters(tempFilters);
     }
     const filteredData = () => {
@@ -241,6 +247,11 @@ const ParticleChart = (props) => {
         }
         setEndIntro(true);
     }
+    const doReset = () => {
+        setResetIndex(resetIndex + 1);
+        setActiveFilters({});
+        setSearchMarks([]);
+    }
     useEffect(() => {
         arrangePoints();
         if(!introStart){
@@ -259,8 +270,10 @@ const ParticleChart = (props) => {
                 <SearchDataPoints
                     onMarked={searchMarkHandler}
                     dataset={props.data?.dataset}
+                    resetIndex={resetIndex}
                 />
             </AppHeader>
+            {(filterCount() > 0 || searchMarks.length > 0) && <button class="btn reset-btn" onClick={doReset}>Reset</button>}
             {props.data.sorters.map(item => (
                 <h2 className={`particle-chart-header ${item.name === sorter ? 'current-info-header' : 'hidden-info-header'} ${shouldShowLabels() ? 'has-labels' : 'has-no-babels'}`}>{item.label}</h2>
             ))}
@@ -301,6 +314,7 @@ const ParticleChart = (props) => {
             <Filters
                 filterables={filterables()}
                 onFiltered={filterHandler}
+                resetIndex={resetIndex}
             />
             {activeDetail && (
                 <DetailModal

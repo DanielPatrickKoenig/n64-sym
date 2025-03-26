@@ -2,8 +2,9 @@
 import { useState, useEffect, useRef } from "react"
 
 const CheckboxGroup = (props) => {
-    const [selectedValues, setSelectedValues] = useState([...new Array(props.values.length).keys()].map(() => false));
-    const [selectedValuesForConfirmation, setSelectedValuesForConfirmation] = useState([...new Array(props.values.length).keys()].map(() => false));
+    const baseSelections = [...new Array(props.values.length).keys()].map(() => false);
+    const [selectedValues, setSelectedValues] = useState(baseSelections);
+    const [selectedValuesForConfirmation, setSelectedValuesForConfirmation] = useState(baseSelections);
     const onCheckChange = (e) => {
         const selectedValue = e.target.value;
         const tempValues = selectedValues.map((item, index) =>
@@ -36,6 +37,10 @@ const CheckboxGroup = (props) => {
         // props.onSelection({ name: props.name, values: tempValues.map((item, index) => ({ item, index })).filter(item => item.item).map(item => props.values[item.index]) });
         // setSelectedValuesForConfirmation(tempValues);
     }, [props.confirmationNumber])
+    useEffect(() => {
+        setSelectedValues(baseSelections);
+        setSelectedValuesForConfirmation(baseSelections);
+    }, [props.resetIndex])
     return (<ul className="check-box-list">
         {selectedValues.map((n, i) => (
             <li className={props.styleIndexes?.length ? props.styleIndexes[i] : ''}>

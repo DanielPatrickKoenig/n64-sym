@@ -34,6 +34,7 @@ const SearchDataPoints = (props) => {
                 name="names"
                 onSelection={selectionHandler}
                 onSelectionForConfirmation={selectionHandlerForConfirmation}
+                resetIndex={props.resetIndex}
             />
             <a
                 className="activate-button"
