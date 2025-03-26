@@ -9,16 +9,19 @@
 .metric-selector button{
     margin: 1.5rem;
     background-color: #66cf00;
+    color: #000000;
     font-weight: bold;
     height: 6rem;
     border-radius: 3rem;
     padding: 0 2rem;
+    border: none;
     
 }
 .metric-selector button.selected{
     background-color: transparent;
     color: #66cf00;
     box-shadow: 0 0 0 .25rem #66cf00 inset;
+    color: #66cf00;
 }
 @media screen and (min-width: 768px) {
     .metric-selector button{

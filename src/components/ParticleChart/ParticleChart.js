@@ -262,7 +262,7 @@ const ParticleChart = (props) => {
                 />
             </AppHeader>
             {props.data.sorters.map(item => (
-                <h2 className={`particle-chart-header ${item.name === sorter ? 'current-info-header' : 'hidden-info-header'} ${shouldShowLabels() ? 'has-labels' : 'has-no-babels'}`}>{item.name}</h2>
+                <h2 className={`particle-chart-header ${item.name === sorter ? 'current-info-header' : 'hidden-info-header'} ${shouldShowLabels() ? 'has-labels' : 'has-no-babels'}`}>{item.label}</h2>
             ))}
             <SorterMenu
                 onSelectSorter={sorterHandler}
@@ -308,7 +308,7 @@ const ParticleChart = (props) => {
                     onDismiss={() => setActiveDetail(null)}
                 />
             )}
-            {valueMetrics?.length && (
+            {valueMetrics?.length > 0 && (
                 <MetricSelector
                     metrics={valueMetrics}
                     onMetricSelected={(index) => setMetricIndex(index)}
