@@ -42,6 +42,7 @@ const Filters = (props) => {
                             onSelection={selectionHandler}
                             onSelectionForConfirmation={selectionHandlerForConfirmation}
                             confirmationNumber={confirmationNumber}
+                            resetIndex={props.resetIndex}
                         />
                     </div>
                 </li>
