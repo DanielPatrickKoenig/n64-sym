@@ -7,9 +7,8 @@ function App() {
 
   const loadData = async () => {
     try{
-      const response = await fetch('https://danielpatrickkoenig.github.io/shared-app-resources/gc_data_with_configs_10.json');
+      const response = await fetch('https://danielpatrickkoenig.github.io/shared-app-resources/gc_data_with_configs_11.json');
       const json = await response.json();
-      console.log(json);
       setAppData(json);
     }
     catch(e){

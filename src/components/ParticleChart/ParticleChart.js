@@ -12,6 +12,7 @@ import Decorators from "../Decoratiors/Decorators";
 import SearchDataPoints from '../SearchDataPoints/SearchDataPoints';
 import DetailModal from "../DetailModal/DetailModal";
 import MetricSelector from "../MetricSelector/MetricSelector";
+import ErrorModal from "../ErrorModal/ErrorModal";
 const ParticleChart = (props) => {
     const sortablePaterns = props.data.sortables;
     const singlePatterns = props.data.singles;
@@ -34,6 +35,8 @@ const ParticleChart = (props) => {
     const [metricIndex, setMetricIndex] = useState(0);
     const [metricFormulas, setMetricFormulas] = useState([]);
     const [resetIndex, setResetIndex] = useState(1);
+    const [errorData, setErrorData] = useState({});
+    const [showDecorators, setShowDecorators] = useState(true);
     const sorterHandler = (item) => {
         setSorter(item.name);
         setPatern(item.patern);
@@ -126,36 +129,43 @@ const ParticleChart = (props) => {
         }
         else if (singlePatterns.includes(patern)) {
             if (patern === 'time') {
-                const lines = [valueMetrics[metricIndex]].map(metric => {
-                    const sortedValues = valuesOfSorter.map(item => ({ item, number: Number(item) })).sort((a, b) => a.number - b.number);
-                    // console.log(sortedValues);
-                    const pointPrimatives = sortedValues.map((item, index) => {
-                        const x = index;
-                        const calculateY = (fData, currentMetric, formula) => {
-                            const processedDada = fData.filter(_item => item.item === _item[sorter]);
-                            const rawY = processedDada.reduce((t, _item) => _item[currentMetric] + t, 0);
-                            let output = rawY;
-                            if (formula === 'average') {
-                                output = rawY / processedDada.length;
+                if (valuesOfSorter.length > 1){
+                    const lines = [valueMetrics[metricIndex]].map(metric => {
+                        const sortedValues = valuesOfSorter.map(item => ({ item, number: Number(item) })).sort((a, b) => a.number - b.number);
+                        // console.log(sortedValues);
+                        const pointPrimatives = sortedValues.map((item, index) => {
+                            const x = index;
+                            const calculateY = (fData, currentMetric, formula) => {
+                                const processedDada = fData.filter(_item => item.item === _item[sorter]);
+                                const rawY = processedDada.reduce((t, _item) => _item[currentMetric] + t, 0);
+                                let output = rawY;
+                                if (formula === 'average') {
+                                    output = rawY / processedDada.length;
+                                }
+                                return output;
                             }
-                            return output;
-                        }
-                        const y = calculateY(filteredData(), metric, currentMetricFormula);
-                        // console.log(y);
-                        return { x, y };
+                            const y = calculateY(filteredData(), metric, currentMetricFormula);
+                            // console.log(y);
+                            return { x, y };
+                        });
+                        const highestY = [...pointPrimatives].sort((a, b) => b.y - a.y)[0].y;
+                        // console.log(highestY);
+                        return pointPrimatives.map(item => (
+                            { 
+                                x: (item.x / (pointPrimatives.length - 1)) * 100,
+                                y: 100 - ((item.y / highestY) * 100),
+                            }
+                        ));
                     });
-                    const highestY = [...pointPrimatives].sort((a, b) => b.y - a.y)[0].y;
-                    // console.log(highestY);
-                    return pointPrimatives.map(item => (
-                        { 
-                            x: (item.x / (pointPrimatives.length - 1)) * 100,
-                            y: 100 - ((item.y / highestY) * 100),
-                        }
-                    ));
-                });
-                // console.log(lines);
-                setPositions(filteredData().map((item, index, arr) => ({ ...item, ...plotToPaths(lines, (index === 0 ? .000000001 : index) / arr.length) })));
-                setLabels(valuesOfSorter.map((item, index) => ({ name: item, x: lines[0][index].x, y: 100 })));
+                    // console.log(lines);
+                    setPositions(filteredData().map((item, index, arr) => ({ ...item, ...plotToPaths(lines, (index === 0 ? .000000001 : index) / arr.length) })));
+                    setLabels(valuesOfSorter.sort((a, b) => a - b).map((item, index) => ({ name: item, x: lines[0][index].x, y: 100 })));
+                }
+                else{
+                    setErrorData({ heading: 'Sorry', message: 'Two time points must be selected to display a time data.' });
+                    setShowDecorators(false);
+                    // show time chart warning
+                }
             }
             else if (patern === 'scatter') {
                 const [ xMetric, yMetric ] = valueMetrics[metricIndex].join ? valueMetrics[metricIndex] : valueMetrics;
@@ -253,6 +263,7 @@ const ParticleChart = (props) => {
         setSearchMarks([]);
     }
     useEffect(() => {
+        setShowDecorators(true);
         arrangePoints();
         if(!introStart){
             setIntroStarted(true);
@@ -261,7 +272,7 @@ const ParticleChart = (props) => {
         }
     }, [sorter, patern, activeFilters, metricIndex]);
     return (
-        <div className={`particle-chart ${endIntro ? 'intro-ended' : ''}`}>
+        <div className={`particle-chart ${endIntro ? 'intro-ended' : ''} ${!showDecorators ? 'hide-content' : ''}`}>
             <AppHeader
                 filters={activeFilters}
                 sorter={sorter}
@@ -275,7 +286,7 @@ const ParticleChart = (props) => {
             </AppHeader>
             {(filterCount() > 0 || searchMarks.length > 0) && <button class="btn reset-btn" onClick={doReset}>Reset</button>}
             {props.data.sorters.map(item => (
-                <h2 className={`particle-chart-header ${item.name === sorter ? 'current-info-header' : 'hidden-info-header'} ${shouldShowLabels() ? 'has-labels' : 'has-no-babels'}`}>{item.label}</h2>
+                <h2 className={`particle-chart-header ${item.name === sorter ? 'current-info-header' : 'hidden-info-header'} ${shouldShowLabels() ? 'has-labels' : 'has-no-babels'}`}>{item.label ? item.label : item.name}</h2>
             ))}
             <SorterMenu
                 onSelectSorter={sorterHandler}
@@ -329,6 +340,12 @@ const ParticleChart = (props) => {
                     metricIndex={metricIndex}
                 />
             )}
+            {Object.keys(errorData).length > 0 && (
+                <ErrorModal
+                    headline={errorData.heading}
+                    message={errorData.message}
+                    onClose={() => setErrorData({})}
+                />)}
         </div>
     )
 }
